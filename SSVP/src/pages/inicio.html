@@ -17,22 +17,33 @@
 <body>
 
     <header>
-        <h1>SSVP - Sociedade São Vicente de Paula</h1>
+
+        <div id="cabecalho">
+            <button id="menuLateral"><img src="../assets/menu-aberto.png" id="imgMenu"></button>
+
+            <div>
+                <h1 class="texto-desktop">SSVP - Sociedade São Vicente de Paula</h1>
+                <h1 class="texto-mobile">SSVP</h1>
+            </div>
+            <div id="direita">
+
+            </div>
+        </div>
 
         <nav>
 
             <ul class="menu">
                 <li>
-                    <a href="">
+                    <a href="inicio.html">
                         Página inicial
                     </a>
-                    <a href="">
+                    <a href="financeiro.html">
                         Financeiro
                     </a>
-                    <a href="">
+                    <a href="calendario.html">
                         Calendário
                     </a>
-                    <a href="">
+                    <a href="info.html">
                         Informações
                     </a>
                 </li>
@@ -42,40 +53,96 @@
 
     </header>
 
-    <div class="painel_um">
-        <div class="um">
-            <h2>Saldo em caixa</h2>
-            <p>R$00,00 </p>
-        </div>
-        <div class="um">
-            <h2>Famílias assistidas</h2>
-            <p>3</p>
-        </div>
-        <div class="um">
-            <h2>Orações</h2>
-        </div>
-    </div>
 
-    <div class="painel_dois">
-        <h3>Última reunião</h3>
-        <p>Ata Nº X</p>
-        <p>Membros presentes: 3</p>
-        <p>10/10/2025</p>
-    </div>
 
-    <div class="painel_tres">
-        <div class="dois">
-            <h3>Última Escala de Visita</h3>
-        </div>
-        <div class="dois">
-            <h3>Próxima Escala de Visita</h3>
-        </div>
-    </div>
+    <main>
 
+        <div class="sidebar" id="barra">
+            <p class="barElement">Atas e reuiniões</p>
+            <p class="barElement">Famílias assistidas</p>
+            <p class="barElement">Minha conta</p>
+            <p class="barElement">Configurações</p>
+            <p class="barElement">Sair</p>
+        </div>
+
+        <div id="conteudo">
+            <div class="painel_um">
+                <div class="um" id="saldo">
+                    <h3>Saldo em caixa</h3>
+                    <p>R$<span id="valorSaldo">...</span> </p>
+                </div>
+                <div class="um" id="familia">
+                    <h3>Famílias assistidas</h3>
+                    <p>3</p>
+                </div>
+                <div class="um" id="oracoes">
+                    <h3>Orações</h3>
+                </div>
+            </div>
+
+            <div class="painel_dois">
+                <h3>Última reunião</h3>
+                <p>Ata Nº X</p>
+                <p>Membros presentes: 3</p>
+                <p>10/10/2025</p>
+            </div>
+
+            <div class="painel_tres">
+                <div class="dois" id="abaUltima">
+                    <div class="tres">
+                        <h3>Última Escala de Visita</h3>
+                        <button class="botao" id="ultimaEscala"><img src="../assets/setaBaixo.png"
+                                class="seta"></button>
+                    </div>
+
+                    <div id="conteudoUltima">
+                        <div>
+                            <h4>Familia Silva</h4>
+                            <p>23/11/2025 18:00 </p>
+                            <p>Responsáveis: Lara e Vinícios</p>
+                        </div>
+
+                        <div>
+                            <h4>Familia Nunes</h4>
+                            <p>11/11/2025 19:00 </p>
+                            <p>Responsáveis: Breno e Débora</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="dois" id="abaProxima">
+                    <div class="tres">
+                        <h3>Próxima Escala de Visita</h3>
+                        <button class="botao" id="proximaEscala"><img src="../assets/setaBaixo.png"
+                                class="seta"></button>
+                    </div>
+
+                    <div id="conteudoProxima">
+                        <div>
+                            <h4>Familia Carvalho</h4>
+                            <p>10/01/2026 13:00 </p>
+                            <p>Responsáveis: Victor e Maria</p>
+                        </div>
+
+                        <div>
+                            <h4>Familia Silva</h4>
+                            <p>29/01/2026 15:00 </p>
+                            <p>Responsáveis: Lara e Vinícios</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
 
     <footer>
         <p>&copy; 2025 SSVP - Todos os direitos reservados</p>
     </footer>
+
+    <script src="../scripts/inicio.js"></script>
 
 </body>
 
