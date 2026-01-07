@@ -255,7 +255,33 @@ footer {
 
 
 @media (max-width: 768px) {
+    .sidebar{
+    display: none;
+}
 
+.barraLateral{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    background: linear-gradient(180deg, #0f299b 0%, rgb(0, 119, 255) 100%);
+
+    .barElement{
+        display: flex;
+        justify-content:
+        align-items: center;
+        height: 50px;
+        background-color: none;
+        color: white;
+        border-bottom: 2px solid white;
+      
+    }
+    
+    & .barElement:hover{
+        opacity: 0.8;
+        cursor: pointer;
+    }
+
+}
     .texto-desktop {
         display: none;
     }
@@ -280,3 +306,4 @@ footer {
     }
 
 }
+
