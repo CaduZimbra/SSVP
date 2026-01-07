@@ -1,0 +1,84 @@
+
+
+body{
+    font-family: Arial, sans-serif;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0px;
+    background-color: #ffffff;
+}
+.calendario{
+    width: 500px;
+    height: 400px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #222;
+    overflow: hidden;
+    color: rgb(0, 119, 255);
+    padding: 20px;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.botao{
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+    padding: 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+#mais{
+    position: absolute;
+    right: 50px;
+    border: none;
+}
+#mes{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.diasSemana, .dias{
+    display: flex;
+    flex-wrap: wrap;
+}
+.dias{
+    height: 240px;
+    color:black;
+    font-size:20px;
+}
+.diasSemana div,.dias div{
+    width: calc(100% / 7);
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 5px;
+}
+.dias div{
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;    
+}
+.dias div:hover{
+    background-color: rgb(0, 119, 255);
+    color: #fff;
+}
+.dias .hoje {
+    background-color: rgb(0, 119, 255);
+    color: #fff;
+      font-weight: bold;
+}   
+.dias .vazio {
+    color: #a6a5a5;
+    cursor: default;
+    opacity: 0.6;
+}   
+.dias .fim-de-semana {
+    color: #b0b0b0;
+        opacity: 0.6;
+}
