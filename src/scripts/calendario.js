@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mesElemento = document.getElementById('mes');
     const btnAnterior = document.getElementById('anterior');
     const btnProximo = document.getElementById('proximo');
-
+    const btnBusca = document.getElementById('busca');
     const meses = [
         "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
         "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
@@ -102,6 +102,35 @@ document.addEventListener('DOMContentLoaded', () => {
         dataAtual.setMonth(dataAtual.getMonth() + 1);
         renderizarCalendario();
     });
+    
+const painelBusca = document.getElementById('painelBusca');
+const buscaMes = document.getElementById('buscaMes');
+const buscaAno = document.getElementById('buscaAno');
+const confirmarBusca = document.getElementById('confirmarBusca');
+
+btnBusca.addEventListener('click', () => {
+    painelBusca.style.display =
+        painelBusca.style.display === 'flex' ? 'none' : 'flex';
+
+    buscaMes.value = dataAtual.getMonth();
+    buscaAno.value = dataAtual.getFullYear();
+});
+
+confirmarBusca.addEventListener('click', () => {
+    const mes = parseInt(buscaMes.value);
+    const ano = parseInt(buscaAno.value);
+
+    if (isNaN(ano)) {
+        alert("Digite um ano válido.");
+        return;
+    }
+
+    dataAtual = new Date(ano, mes);
+    renderizarCalendario();
+    painelBusca.style.display = 'none';
+});
+
+
 
     renderizarCalendario();
 });
@@ -114,4 +143,3 @@ function salvarEvento(dataChave, texto) {
     localStorage.setItem('eventos_ssvp', JSON.stringify(eventos));
     renderizarCalendario(); // Recarrega o calendário para mostrar o marcador
 }
-

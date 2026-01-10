@@ -277,6 +277,9 @@ header {
     .dias {
         height: auto;      /* Remove a altura fixa para não amassar os dias */
     }
+    #painelBusca {
+    right: 170px;
+    }
 }
 
 footer {
@@ -313,4 +316,40 @@ footer {
 .dias div:hover {
     background-color: rgba(0, 140, 255, 0.842); /* Um brilho leve ao passar o mouse */
     transform: scale(1.1); /* Aumenta um pouquinho o número */
+}
+
+#busca{
+    position: absolute;
+    left: 50px;
+    border: none;
+}
+.busca-calendario {
+    position: absolute;
+    top: 50px;
+    right: 260px;
+    transform: translateX(-50%);
+    background: #fff;
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    display: none;
+    gap: 8px;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.busca-calendario select,
+.busca-calendario input,
+.busca-calendario button {
+    padding: 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.busca-calendario button {
+    background-color: rgb(0, 119, 255);
+    color: white;
+    border: none;
+    cursor: pointer;
+    opacity: 1;
 }
