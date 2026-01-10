@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login SSVP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/login.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <header class="login-header">
+            <img src="https://www.ssvpglobal.org/wp-content/uploads/2022/07/logo-sem-fundo.png" alt="Logo SSVP" class="logo-img">
+            <h1>Entrar</h1>
+        </header>
+
+        <form action="../src/pages/inicio.html">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="Seu email">
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" required placeholder="Sua senha">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Continuar</button>
+        </form>
+
+        <div class="divider">ou</div>
+
+        <div class="social-login">
+            <a href="/src/pages/registrar.html" class="btn btn-secondary" style="text-decoration: none;">
+                Registrar-se
+            </a>
+
+            <button type="button" class="btn btn-secondary">
+                <i class="fab fa-apple"></i> Continuar com a Apple
+            </button>
+
+            <button type="button" class="btn btn-secondary">
+                <i class="fab fa-google" style="background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat; -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;"></i>
+                Continuar com o Google
+            </button>
+        </div>
+
+        <footer class="login-footer">
+            <p>
+                Ao clicar em continuar, você concorda com os nossos<br>
+                <a href="#">Termos de Serviço</a> e com a <a href="#">Política de Privacidade</a>.
+            </p>
+        </footer>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,316 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0px;
+    background-color: #ffffff;
+}
+
+.container {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    width: 100%;
+    min-height: 150px;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #003c93;
+    border-bottom: 5px solid #2196f3;
+}
+
+.header-superior {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+#botaoMenu {
+    border: 0;
+    background-color: white;
+    padding: 8px;
+}
+
+#botaoMenu:hover {
+    opacity: 0.5;
+}
+
+#botaoMenuLateral {
+    width: 60px;
+    height: 60px;
+    border: none;
+    background-color: white;
+}
+
+.vazio {
+    width: 60px;
+    height: 60px;
+}
+
+.texto-mobile {
+    display: none;
+}
+
+.menu {
+    display: inline-flex;
+    gap: 30px;
+    padding: 20px;
+
+    li {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: #003c93;
+    }
+}
+
+.menu a:hover {
+    text-decoration: underline;
+    filter: brightness(1.2);
+}
+
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 0;
+    /* Começa fechado */
+    position: fixed;
+    /* Fixa na tela */
+    z-index: 1000;
+    /* Sobrepõe tudo */
+    top: 0;
+    left: 0;
+    background-color: #2196f3;
+    overflow-x: hidden;
+    transition: 0.5s;
+    /* Animação suave ao abrir */
+    padding-top: 10px;
+}
+
+.barElement{
+    color: white;
+    padding: 20px;
+    text-decoration: none;
+}
+
+.barElement:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.closebtn{
+    display: flex;
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    font-size:xx-large;
+    
+}
+
+.closebtn:hover{
+    opacity: 0.8;
+}
+
+.calendario {
+    width: 95%;            /* Ocupa quase toda a tela em celulares */
+    max-width: 500px;      /* Mas não passa de 500px em telas grandes */
+    height: auto;          /* Deixa a altura se ajustar ao conteúdo */
+    min-height: 550px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+    color: rgb(0, 119, 255);
+    padding: 15px;         /* Reduzi um pouco o padding */
+    margin: 20px auto;     /* Centraliza na tela */
+}
+
+
+.cabeca {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.botao {
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+    padding: 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#mais {
+    position: absolute;
+    right: 50px;
+    border: none;
+}
+
+#mes {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.diasSemana,
+.dias {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dias {
+    height: 240px;
+    color: black;
+    font-size: 20px;
+}
+
+.dias div, .diasSemana div {
+    width: calc(100% / 7); /* Divide o espaço por 7 colunas exatas */
+    aspect-ratio: 1 / 1;   /* Mantém o dia sempre como um quadrado perfeito */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(14px, 4vw, 18px); /* Fonte diminui conforme a tela diminui */
+    padding: 5px;
+}
+
+.dias div {
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dias div:hover {
+    background-color: rgb(0, 119, 255);
+    color: #fff;
+}
+
+.dias .hoje {
+    background-color: rgb(0, 119, 255);
+    color: #fff;
+    font-weight: bold;
+}
+
+.dias .vazio {
+    color: #a6a5a5;
+    cursor: default;
+    opacity: 0.6;
+}
+
+.dias .fim-de-semana {
+    color: #b0b0b0;
+    opacity: 0.6;
+}
+
+@media (max-width: 600px) {
+    .texto-desktop {
+        display: none;
+    }
+
+    .texto-mobile {
+        display: block;
+    }
+
+    .menu {
+        font-size: 70%;
+    }
+
+    /* Faz os cards ocuparem a largura toda no celular */
+    .itemPainelMaior,
+    .itemPainelMeio {
+        width: 80%;
+        margin: 10px 0;
+    }
+
+    .painelMaior {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        /* Deixa crescer conforme o conteúdo */
+    }
+
+    .painelMeio {
+
+        justify-content: center;
+    }
+}
+
+@media (max-width: 400px) {
+    .calendario {
+        padding: 10px;
+    }
+    
+    #mes {
+        font-size: 18px;   /* Texto do mês menor no celular */
+    }
+
+    .botao {
+        font-size: 20px;   /* Ícones de seta menores */
+        padding: 10px;
+    }
+
+    .dias {
+        height: auto;      /* Remove a altura fixa para não amassar os dias */
+    }
+}
+
+footer {
+    display: flex;
+    padding: 20px;
+    width: 100%;
+    justify-content: center;
+    background-color: #003c93;
+    color: white;
+
+}
+
+.dias div.tem-evento {
+    position: relative;
+    
+}
+
+.dias div.tem-evento::after {
+    content: '';
+    width: 30px;
+    height: 4px;
+    background-color: #003c93;
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dias div {
+    cursor: pointer; /* Transforma a seta em 'mãozinha' */
+    transition: all 0.2s ease;
+}
+
+.dias div:hover {
+    background-color: rgba(0, 140, 255, 0.842); /* Um brilho leve ao passar o mouse */
+    transform: scale(1.1); /* Aumenta um pouquinho o número */
+}
