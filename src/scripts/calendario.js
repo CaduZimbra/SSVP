@@ -1,10 +1,18 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     const diasElemento = document.getElementById('dias');
     const mesElemento = document.getElementById('mes');
     const btnAnterior = document.getElementById('anterior');
     const btnProximo = document.getElementById('proximo');
     const btnBusca = document.getElementById('busca');
+    
+    // Elementos do Modal
+    const modal = document.getElementById('modalEvento');
+    const fecharModal = document.querySelector('.close-modal');
+    const inputEvento = document.getElementById('inputEvento');
+    const btnSalvar = document.getElementById('btnSalvar');
+    const btnExcluir = document.getElementById('btnExcluir');
+    const btnEditar = document.getElementById('btnEditar');
+    
     const meses = [
         "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
         "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
@@ -12,6 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let dataAtual = new Date();
     const hoje = new Date();
+    let dataSelecionada = "";
+
+    // Carregar eventos do LocalStorage
+    let eventos = JSON.parse(localStorage.getItem('eventos_ssvp')) || {};
 
     function renderizarCalendario() {
         const ano = dataAtual.getFullYear();
@@ -23,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mesElemento.textContent = `${meses[mes]} ${ano}`;
         diasElemento.innerHTML = '';
 
-        // 🔹 Dias do mês anterior
+        // Dias do mês anterior (vazios)
         const ultimoDiaMesAnterior = new Date(ano, mes, 0).getDate();
         for (let i = primeiroDiaSemana; i > 0; i--) {
             const div = document.createElement('div');
@@ -36,55 +48,25 @@ document.addEventListener('DOMContentLoaded', () => {
         for (let dia = 1; dia <= ultimoDiaMes; dia++) {
             const div = document.createElement('div');
             div.textContent = dia;
-
+            const dataChave = `${ano}-${mes + 1}-${dia}`;
             const indiceDiaSemana = (primeiroDiaSemana + dia - 1) % 7;
 
-            // Domingo (0) ou Sábado (6)
-            if (indiceDiaSemana === 0 || indiceDiaSemana === 6) {
-                div.classList.add('fim-de-semana');
-            }
+            if (indiceDiaSemana === 0 || indiceDiaSemana === 6) div.classList.add('fim-de-semana');
+            if (dia === hoje.getDate() && mes === hoje.getMonth() && ano === hoje.getFullYear()) div.classList.add('hoje');
 
-            // Dia de hoje
-            if (
-                dia === hoje.getDate() &&
-                mes === hoje.getMonth() &&
-                ano === hoje.getFullYear()
-            ) {
-                div.classList.add('hoje');
-            }
-
-            diasElemento.appendChild(div);
-
-
-            const dataChave = `${ano}-${mes + 1}-${dia}`;
-
+            // Verifica se tem evento para marcar no calendário
             if (eventos[dataChave]) {
                 div.classList.add('tem-evento');
-                div.title = eventos[dataChave]; // Mostra o texto ao passar o mouse
             }
 
-            // Adicionar evento de clique para salvar
-            div.addEventListener('click', () => {
-                if (eventos[dataChave]) {
-                    const acao = confirm(`Evento: ${eventos[dataChave]}\n\nDeseja REMOVER este compromisso?`);
-                    if (acao) {
-                        delete eventos[dataChave];
-                        localStorage.setItem('eventos_ssvp', JSON.stringify(eventos));
-                        renderizarCalendario();
-                        return; // Sai da função para não abrir o prompt de salvar
-                    }
-                }
-
-                // Se não tinha evento ou ele não quis deletar, permite criar/editar
-                const anotacao = prompt("Digite o novo evento:");
-                if (anotacao) salvarEvento(dataChave, anotacao);
-            });
+            // Clique no dia abre o modal
+            div.addEventListener('click', () => abrirModal(dataChave));
+            diasElemento.appendChild(div);
         }
-
-        //  Dias do próximo mês (completar semanas)
+        
+        // Completar a última semana
         const totalCelulas = diasElemento.children.length;
         const diasRestantes = totalCelulas % 7 === 0 ? 0 : 7 - (totalCelulas % 7);
-
         for (let i = 1; i <= diasRestantes; i++) {
             const div = document.createElement('div');
             div.textContent = i;
@@ -93,53 +75,51 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    btnAnterior.addEventListener('click', () => {
-        dataAtual.setMonth(dataAtual.getMonth() - 1);
-        renderizarCalendario();
-    });
-
-    btnProximo.addEventListener('click', () => {
-        dataAtual.setMonth(dataAtual.getMonth() + 1);
-        renderizarCalendario();
-    });
-    
-const painelBusca = document.getElementById('painelBusca');
-const buscaMes = document.getElementById('buscaMes');
-const buscaAno = document.getElementById('buscaAno');
-const confirmarBusca = document.getElementById('confirmarBusca');
-
-btnBusca.addEventListener('click', () => {
-    painelBusca.style.display =
-        painelBusca.style.display === 'flex' ? 'none' : 'flex';
-
-    buscaMes.value = dataAtual.getMonth();
-    buscaAno.value = dataAtual.getFullYear();
-});
-
-confirmarBusca.addEventListener('click', () => {
-    const mes = parseInt(buscaMes.value);
-    const ano = parseInt(buscaAno.value);
-
-    if (isNaN(ano)) {
-        alert("Digite um ano válido.");
-        return;
+    function abrirModal(dataChave) {
+        dataSelecionada = dataChave;
+        document.getElementById('modalDataTitulo').textContent = `Dia ${dataChave.split('-')[2]}`;
+        
+        if (eventos[dataChave]) {
+            document.getElementById('visualizarEvento').style.display = 'block';
+            document.getElementById('formEvento').style.display = 'none';
+            document.getElementById('textoEventoExibicao').textContent = eventos[dataChave];
+        } else {
+            document.getElementById('visualizarEvento').style.display = 'none';
+            document.getElementById('formEvento').style.display = 'block';
+            inputEvento.value = "";
+        }
+        modal.style.display = 'flex';
     }
 
-    dataAtual = new Date(ano, mes);
+    btnSalvar.addEventListener('click', () => {
+        const texto = inputEvento.value.trim();
+        if (texto) {
+            eventos[dataSelecionada] = texto;
+            localStorage.setItem('eventos_ssvp', JSON.stringify(eventos));
+            modal.style.display = 'none';
+            renderizarCalendario();
+        }
+    });
+
+    btnExcluir.addEventListener('click', () => {
+        delete eventos[dataSelecionada];
+        localStorage.setItem('eventos_ssvp', JSON.stringify(eventos));
+        modal.style.display = 'none';
+        renderizarCalendario();
+    });
+
+    btnEditar.addEventListener('click', () => {
+        inputEvento.value = eventos[dataSelecionada];
+        document.getElementById('visualizarEvento').style.display = 'none';
+        document.getElementById('formEvento').style.display = 'block';
+    });
+
+    fecharModal.onclick = () => modal.style.display = 'none';
+    window.onclick = (event) => { if (event.target == modal) modal.style.display = 'none'; };
+
+    // --- Navegação ---
+    btnAnterior.onclick = () => { dataAtual.setMonth(dataAtual.getMonth() - 1); renderizarCalendario(); };
+    btnProximo.onclick = () => { dataAtual.setMonth(dataAtual.getMonth() + 1); renderizarCalendario(); };
+
     renderizarCalendario();
-    painelBusca.style.display = 'none';
 });
-
-
-
-    renderizarCalendario();
-});
-
-let eventos = JSON.parse(localStorage.getItem('eventos_ssvp')) || {};
-
-// Função para salvar um evento
-function salvarEvento(dataChave, texto) {
-    eventos[dataChave] = texto;
-    localStorage.setItem('eventos_ssvp', JSON.stringify(eventos));
-    renderizarCalendario(); // Recarrega o calendário para mostrar o marcador
-}
