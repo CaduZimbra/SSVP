@@ -98,7 +98,24 @@
         <p>&copy; 2025 SSVP - Todos os direitos reservados</p>
     </footer>
 
-    <script src="../scripts/inicio.js"></script>
+
+<div id="modalEvento" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h3 id="modalDataTitulo">Evento</h3>
+        <div id="visualizarEvento">
+            <p id="textoEventoExibicao" style="margin: 15px 0;"></p>
+            <div class="modal-botoes">
+                <button id="btnEditar" class="btn-acao">Editar</button>
+                <button id="btnExcluir" class="btn-perigo">Excluir</button>
+            </div>
+        </div>
+        <div id="formEvento">
+            <textarea id="inputEvento" placeholder="Digite o compromisso..."></textarea>
+            <button id="btnSalvar" class="btn-acao" style="width: 100%; margin-top: 10px;">Salvar</button>
+        </div>
+    </div>
+</div>
 
 </body>
 
