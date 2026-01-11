@@ -59,4 +59,17 @@ function exibirCompromissoDashboard() {
         `;
     }
 }
+document.addEventListener('DOMContentLoaded', () => {
+    atualizarContadorFamilias();
+});
+
+function atualizarContadorFamilias() {
+    const contadorElemento = document.querySelector('#familia p');
+    
+    if (contadorElemento) {
+        const familias = JSON.parse(localStorage.getItem('familias_ssvp')) || [];
+    
+        contadorElemento.innerText = familias.length;
+    }
+}
 
