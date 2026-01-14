@@ -23,6 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
         alert('Conta criada com sucesso! Agora faça o login.');
 
         
-        window.location.href = '../index.html';
+        window.location.href = 'login.html';
     });
 });
