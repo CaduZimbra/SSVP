@@ -17,40 +17,60 @@
 <body>
 
     <header>
-        <h1 class="texto-desktop">SSVP - Sociedade São Vicente de Paula</h1>
-        <h1 class="texto-mobile">SSVP</h1>
+
+        <div class="header-superior">
+            <button id="botaoMenu" onclick="toggleMenu()"><img src="../assets/menu-aberto.png" width="30"
+                    height="30"></button>
+
+            <div>
+                <h1 class="texto-desktop">SSVP - Sociedade São Vicente de Paulo</h1>
+                <h1 class="texto-mobile">SSVP</h1>
+            </div>
+            <div class="vazio">
+
+            </div>
+        </div>
 
         <nav>
 
             <ul class="menu">
-                <li>
-                    <a href="inicio.html">
-                        Página inicial
-                    </a>
-                    <a href="financeiro.html">
-                        Financeiro
-                    </a>
-                    <a href="calendario.html">
-                        Calendário
-                    </a>
-                    <a href="info.html">
-                        Informações
-                    </a>
-                </li>
-
+                <li><a href="inicio.html">Página inicial</a></li>
+                <li><a href="financeiro.html">Financeiro </a></li>
+                <li><a href="calendario.html">Calendário</a></li>
+                <li><a href="info.html">Informações</a></li>
             </ul>
         </nav>
 
-    </header>
-    <main>
 
+        <div class="sidebar" id="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()"> x </a>
+            <a class="barElement">Atas e reuiniões</a>
+            <a href="familias.html" class="barElement">Famílias assistidas</a>
+            <a class="barElement">Minha conta</a>
+            <a class="barElement">Configurações</a>
+            <a href="login.html" class="barElement">Sair</a>
+        </div>
+
+    </header>
+
+
+    <main>
+        <ul>
+            <li>
+                <p>Dados</p>
+            </li>
+            <li>
+                <p>Orações</p>
+            </li>
+        </ul>
     </main>
+
 
     <footer>
         <p>&copy; 2025 SSVP - Todos os direitos reservados</p>
     </footer>
 
-    <script src="../scripts/inicio.js"></script>
+    <script src="../scripts/info.js"></script>
 
 </body>
 

@@ -1,0 +1,290 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+    width: 100%;
+    min-height: 150px;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #003c93;
+    border-bottom: 5px solid #2196f3;
+}
+
+.header-superior {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+main {
+    flex: 1;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+
+main > ul {
+    display: inline-flex;
+    gap: 50px;
+    list-style-type: none;
+    padding: 10px 0px 10px 0px;
+}
+
+main > ul > li{
+    padding: 5px 40px;
+    border-radius: 100px;
+    background-color: #2196f3;
+}
+
+main > ul > li > p{
+    color: white;
+}
+
+#botaoMenu{
+    border: 0;
+    background-color: white;
+    padding: 8px;
+}
+
+#botaoMenu:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.texto-mobile {
+    display: none;
+}
+
+.menu {
+    display: inline-flex;
+    gap: 30px;
+    padding: 20px;
+
+    li{
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: #003c93;
+    }
+}
+
+.menu a:hover {
+    text-decoration: underline;
+    filter: brightness(1.2);
+}
+
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 0;
+    /* Começa fechado */
+    position: fixed;
+    /* Fixa na tela */
+    z-index: 1000;
+    /* Sobrepõe tudo */
+    top: 0;
+    left: 0;
+    background-color: #2196f3;
+    overflow-x: hidden;
+    transition: 0.5s;
+    /* Animação suave ao abrir */
+    padding-top: 10px;
+}
+
+.barElement{
+    color: white;
+    padding: 20px;
+    text-decoration: none;
+}
+
+.barElement:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.closebtn{
+    display: flex;
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    font-size:xx-large;
+    
+}
+
+.closebtn:hover{
+    opacity: 0.8;
+}
+
+
+.painelMaior {
+    display: flex;
+    justify-content: space-between;
+    height: 200px;
+}
+
+.itemPainelMaior {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    justify-content: center;
+    background-color: #003c93;
+    color: white;
+    padding: 20px;
+    margin: 20px;   
+    border-radius: 16px;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    text-decoration: none;
+}
+.itemPainelMaior:hover {
+    filter: brightness(1.2);
+    cursor: pointer;
+}
+.painelMeio {
+    display: flex;
+    justify-content: space-between; /* Distribui os dois cards nas pontas */
+    flex-wrap: wrap; /* Garante que no celular um fique embaixo do outro */
+}
+
+.itemPainelMeio {
+    display: flex;
+    flex-direction: column;
+    width: 45%; /* Reduzi de 40% para 45% para aproveitar melhor o espaço lateral */
+    min-height: 150px;
+    background-color: #2196f3;
+    color: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 16px;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+
+.painelFim {
+    display: inline-flex;
+    width: 100%;
+    min-height: 400px;
+}
+
+
+.itemPainelFim {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: max-content;
+    background-color: #2196f3;
+    color: white;
+    width: 100%;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 16px;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25)
+}
+
+.conteudoEscala {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.botaoAba {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: #2196f3;
+}
+
+.seta {
+    width: 30px;
+    height: 30px;
+}
+
+
+footer {
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    background-color: #003c93;
+    color: white;
+
+}
+
+@media (max-width: 600px) {
+    .texto-desktop { display: none; }
+    .texto-mobile { display: block; }
+
+    .menu{
+        font-size: 70%;
+    }
+    
+    /* Faz os cards ocuparem a largura toda no celular */
+    .itemPainelMaior, .itemPainelMeio {
+        width: 80%;
+        margin: 10px 0;
+    }
+    
+    .painelMaior {
+        flex-direction: column;
+        align-items: center;
+        height: auto; /* Deixa crescer conforme o conteúdo */
+    }
+
+    .painelMeio{
+        
+        justify-content: center;
+    }
+}
+
+
+.aba-conteudo{
+/* Em vez de display: none, usamos propriedades que o CSS consegue animar */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease-out, opacity 0.3s ease;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* Esta classe será adicionada via JavaScript */
+.aba-aberta {
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: 500px; /* Um valor alto o suficiente para caber o texto */
+    opacity: 1;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px solid rgba(255,255,255,0.3);
+}
+
+/* Rotação da seta para dar um feedback visual */
+.seta {
+    transition: transform 0.3s ease;
+}
+
+.seta-girada {
+    transform: rotate(180deg);
+}
