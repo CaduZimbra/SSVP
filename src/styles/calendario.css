@@ -1,0 +1,443 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0px;
+    background-color: #ffffff;
+}
+
+.container {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    width: 100%;
+    min-height: 150px;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #003c93;
+    border-bottom: 5px solid #2196f3;
+}
+
+.header-superior {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+#botaoMenu {
+    border: 0;
+    background-color: white;
+    padding: 8px;
+}
+
+#botaoMenu:hover {
+    opacity: 0.5;
+}
+
+#botaoMenuLateral {
+    width: 60px;
+    height: 60px;
+    border: none;
+    background-color: white;
+}
+
+.vazio {
+    width: 60px;
+    height: 60px;
+}
+
+.texto-mobile {
+    display: none;
+}
+
+.menu {
+    display: inline-flex;
+    gap: 30px;
+    padding: 20px;
+
+    li {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: #003c93;
+    }
+}
+
+.menu a:hover {
+    text-decoration: underline;
+    filter: brightness(1.2);
+}
+
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 0;
+    /* Começa fechado */
+    position: fixed;
+    /* Fixa na tela */
+    z-index: 1000;
+    /* Sobrepõe tudo */
+    top: 0;
+    left: 0;
+    background-color: #2196f3;
+    overflow-x: hidden;
+    transition: 0.5s;
+    /* Animação suave ao abrir */
+    padding-top: 10px;
+}
+
+.barElement{
+    color: white;
+    padding: 20px;
+    text-decoration: none;
+}
+
+.barElement:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.closebtn{
+    display: flex;
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    font-size:xx-large;
+    
+}
+
+.closebtn:hover{
+    opacity: 0.8;
+}
+
+.calendario {
+    width: 95%;            /* Ocupa quase toda a tela em celulares */
+    max-width: 500px;      /* Mas não passa de 500px em telas grandes */
+    height: auto;          /* Deixa a altura se ajustar ao conteúdo */
+    min-height: 550px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+    color: rgb(0, 119, 255);
+    padding: 15px;         /* Reduzi um pouco o padding */
+    margin: 20px auto;     /* Centraliza na tela */
+}
+
+
+.cabeca {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.botao {
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+    padding: 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#mais {
+    position: absolute;
+    right: 50px;
+    border: none;
+}
+
+#mes {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.diasSemana,
+.dias {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dias {
+    height: 240px;
+    color: black;
+    font-size: 20px;
+}
+
+.dias div, .diasSemana div {
+    width: calc(100% / 7); /* Divide o espaço por 7 colunas exatas */
+    aspect-ratio: 1 / 1;   /* Mantém o dia sempre como um quadrado perfeito */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(14px, 4vw, 18px); /* Fonte diminui conforme a tela diminui */
+    padding: 5px;
+}
+
+.dias div {
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dias div:hover {
+    background-color: rgb(0, 119, 255);
+    color: #fff;
+}
+
+.dias .hoje {
+    background-color: rgb(0, 119, 255);
+    color: #fff;
+    font-weight: bold;
+}
+
+.dias .vazio {
+    color: #a6a5a5;
+    cursor: default;
+    opacity: 0.6;
+}
+
+.dias .fim-de-semana {
+    color: #b0b0b0;
+    opacity: 0.6;
+}
+
+@media (max-width: 600px) {
+    .texto-desktop {
+        display: none;
+    }
+
+    .texto-mobile {
+        display: block;
+    }
+
+    .menu {
+        font-size: 70%;
+    }
+
+    /* Faz os cards ocuparem a largura toda no celular */
+    .itemPainelMaior,
+    .itemPainelMeio {
+        width: 80%;
+        margin: 10px 0;
+    }
+
+    .painelMaior {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        /* Deixa crescer conforme o conteúdo */
+    }
+
+    .painelMeio {
+
+        justify-content: center;
+    }
+}
+
+@media (max-width: 400px) {
+    .calendario {
+        padding: 10px;
+    }
+    
+    #mes {
+        font-size: 18px;   /* Texto do mês menor no celular */
+    }
+
+    .botao {
+        font-size: 20px;   /* Ícones de seta menores */
+        padding: 10px;
+    }
+
+    .dias {
+        height: auto;      /* Remove a altura fixa para não amassar os dias */
+    }
+    #painelBusca {
+    right: 170px;
+    }
+    #modalDataTitulo {
+        font-size: 1.2rem;
+    }
+    
+    .btn-acao, .btn-perigo {
+        padding: 15px; 
+        font-size: 16px;
+    }
+
+    #inputEvento {
+        font-size: 16px; 
+    }
+}
+
+footer {
+    display: flex;
+    padding: 20px;
+    width: 100%;
+    justify-content: center;
+    background-color: #003c93;
+    color: white;
+
+}
+
+.dias div.tem-evento {
+    position: relative;
+    
+}
+
+.dias div.tem-evento::after {
+    content: '';
+    width: 30px;
+    height: 4px;
+    background-color: #003c93;
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dias div {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.dias div:hover {
+    background-color: rgba(0, 140, 255, 0.842); /* Um brilho leve ao passar o mouse */
+    transform: scale(1.1); /* Aumenta um pouquinho o número */
+}
+
+#busca{
+    position: absolute;
+    left: 50px;
+    border: none;
+}
+.busca-calendario {
+    position: absolute;
+    top: 50px;
+    right: 260px;
+    transform: translateX(-50%);
+    background: #fff;
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    display: none;
+    gap: 8px;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.busca-calendario select,
+.busca-calendario input,
+.busca-calendario button {
+    padding: 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.busca-calendario button {
+    background-color: rgb(0, 119, 255);
+    color: white;
+    border: none;
+    cursor: pointer;
+    opacity: 1;
+}
+/* Estilos do Modal */
+@keyframes animarModal {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(2px);
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    animation: animarModal 0.3s ease-out; 
+}
+
+.close-modal {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#inputEvento {
+    width: 100%;
+    height: 80px;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+}
+
+.modal-botoes {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-acao, .btn-perigo {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+    transition: filter 0.2s;
+}
+.btn-acao { background-color: #003c93; color: white; }
+.btn-perigo { background-color: #d32f2f; color: white; }
+
+.btn-acao:hover, .btn-perigo:hover {
+    filter: brightness(1.2);
+}
