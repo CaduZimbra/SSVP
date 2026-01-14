@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (emailDigitado === usuarioSalvo.emailSalvo && senhaDigitada === usuarioSalvo.senhaSalva) {
             
             alert('Bem-vindo de volta, ' + usuarioSalvo.nomeSalvo + '!');
-            window.location.href = '../src/pages/inicio.html'; 
+            window.location.href = '../pages/inicio.html'; 
 
         } else {
             alert('Email ou senha incorretos!');
