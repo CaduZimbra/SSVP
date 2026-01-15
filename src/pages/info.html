@@ -41,7 +41,6 @@
             </ul>
         </nav>
 
-
         <div class="sidebar" id="sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()"> x </a>
             <a class="barElement">Atas e reuiniões</a>
@@ -53,20 +52,44 @@
 
     </header>
 
-
     <main>
+
+        <!-- Botões das Abas -->
         <ul class="tabs">
             <li>
-                <button class="tab-btn active" data-tab="conteudo1"> 
+                <button class="tab-btn active" data-tab="dados"> 
                     Dados
                 </button>
             </li>
             <li>
-                <button class="tab-btn" data-tab="conteudo1"> 
+                <button class="tab-btn" data-tab="oracoes"> 
                     Orações
                 </button>
             </li>
         </ul>
+
+        <!-- Conteúdo das Abas | Primário ativo-->
+        <div class="tabs-conteudo">
+
+            <div class="primário" id="Dados">
+                <h2>
+                    Dados
+                </h2>
+                <p>
+                    Conteúdo
+                </p>
+            </div>
+
+            <div class="secundário" id="oracoes">
+                <h2>
+                    Orações
+                </h2>
+                <p>
+                    Conteúdo
+                </p>
+            </div>
+            
+        </div>
     </main>
 
 
