@@ -4,10 +4,10 @@ elemento.innerText = valorEmCaixa;
 
 function toggleMenu() {
   const menu = document.getElementById("sidebar");
-  if (menu.style.width === "250px") {
-    menu.style.width = "0";
+  if (menu.style.width === "270px") {
+    menu.style.width = "0"
   } else {
-    menu.style.width = "250px";
+    menu.style.width = "270px";
   }
 }
 
@@ -73,3 +73,14 @@ function atualizarContadorFamilias() {
     }
 }
 
+const botaoMenuPerfil = document.getElementById("botao-menu-perfil");
+const menuPerfil = document.getElementById("menu-perfil");
+const fecharMenu = document.getElementById("fechar-menu");
+
+botaoMenuPerfil.addEventListener("click", () => {
+    menuPerfil.classList.add("ativo");
+});
+
+fecharMenu.addEventListener("click", () => {
+    menuPerfil.classList.remove("ativo");
+});

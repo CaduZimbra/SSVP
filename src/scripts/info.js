@@ -30,3 +30,15 @@ botoes.forEach(botao => {
     conteudo.classList.add('aba-aberta');
   });
 });
+
+const botaoMenuPerfil = document.getElementById("botao-menu-perfil");
+const menuPerfil = document.getElementById("menu-perfil");
+const fecharMenu = document.getElementById("fechar-menu");
+
+botaoMenuPerfil.addEventListener("click", () => {
+    menuPerfil.classList.add("ativo");
+});
+
+fecharMenu.addEventListener("click", () => {
+    menuPerfil.classList.remove("ativo");
+});
