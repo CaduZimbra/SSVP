@@ -24,7 +24,8 @@ header {
     align-items: center;
     justify-content: center;
     color: #003c93;
-    border-bottom: 5px solid #2196f3;
+    border-bottom: 3px solid #0064B6;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .header-superior {
@@ -32,7 +33,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 16px;
+    padding: 16px 16px 0px 16px;
 }
 
 main {
@@ -51,20 +52,22 @@ main > ul {
 
 main > ul > li > button{
     cursor: pointer;
-    color: #2196f3;
+    color: #0064B6;
     padding: 5px 40px;
     background-color: white;
     border-radius: 100px;
-    border: 2px solid #2196f3;
+    border: 2px solid #0064B6;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 main > ul > li > button.active{
     cursor: pointer;
     color: white;
     padding: 5px 40px;
-    background-color: #2196f3;
+    background-color: #0064B6;
     border-radius: 100px;
-    border: 2px solid #2196f3;
+    border: 2px solid #0064B6;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .aba-conteudo {
@@ -93,7 +96,7 @@ main > ul > li > button.active{
 .menu {
     display: inline-flex;
     gap: 30px;
-    padding: 20px;
+    padding: 20px 20px 15px 20px;
 
     li{
         list-style: none;
@@ -123,7 +126,7 @@ main > ul > li > button.active{
     /* Sobrepõe tudo */
     top: 0;
     left: 0;
-    background-color: #2196f3;
+    background-color: #0064B6;
     overflow-x: hidden;
     transition: 0.5s;
     /* Animação suave ao abrir */
