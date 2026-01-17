@@ -16,8 +16,9 @@ body {
 }
 
 header {
+    position: relative;
     width: 100%;
-    min-height: 150px;
+    min-height: 100px;
     display: flex;
     background-color: white;
     flex-direction: column;
@@ -33,8 +34,186 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 16px 16px 0px 16px;
+    padding: 0px 32px;
 }
+
+.header-superior > ul {
+    display: inline-flex;
+    list-style-type: none;
+    gap: 10px;
+    align-items: center;
+}
+
+.header-superior img {
+    width: 30px;
+    height: 30px;
+}
+
+#perfil {
+    width: 60px;
+    height: 30px;
+}
+
+.header-superior button{
+    border: 0;
+    background-color: white;
+    padding: 8px;
+}
+
+.header-superior a:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.header-superior button:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+/* ------------Ínicio Menu flutuante------------ */
+#menu-perfil {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 240px;
+    height: 230px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+    padding: 0px 20px 20px 20px;
+
+    /*escondendo*/
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Menu aberto */
+#menu-perfil.ativo {
+    /*mostrando*/
+    display: grid;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Botão fechar */
+#fechar-menu {
+    text-align: right;
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#menu-perfil button:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+/* Lista do menu */
+#menu-perfil ul {
+    list-style: none;
+    padding: 0px;
+}
+
+#menu-perfil li {
+    text-align: right;
+    margin-bottom: 12px;
+    padding-right: 4px;
+}
+
+#menu-perfil a {
+    text-decoration: none;
+    color: #003c93;
+    font-weight: 500;
+}
+
+/* ------------Fim Menu flutuante------------ */
+
+#botaoMenuLateral {
+    width: 60px;
+    height: 60px;
+    border: none;
+    background-color: white;
+}
+
+.me {
+    width: 60px;
+    height: 60px;
+}
+
+.texto-mobile {
+    display: none;
+}
+
+.menu {
+    display: inline-flex;
+    gap: 30px;
+    padding: 20px;
+
+    li{
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: #0064B6;
+    }
+}
+
+.menu a:hover {
+    text-decoration: underline;
+    filter: brightness(1.2);
+}
+
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 0px;
+    /* Começa fechado */
+    position: fixed;
+    /* Fixa na tela */
+    z-index: 1000;
+    /* Sobrepõe tudo */
+    top: 0;
+    left: 0;
+    background-color: #0064B6;
+    overflow-x: hidden;
+    transition: 0.5s;
+    /* Animação suave ao abrir */
+    padding-top: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.barElement{
+    color: white;
+    
+    padding: 10px 20px 20px 47px;
+    text-decoration: none;
+}
+
+.barElement:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.closebtn{
+    display: flex;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px 20px 47px;
+    font-size:xx-large;
+    
+}
+
+.closebtn:hover{
+    opacity: 0.8;
+}
+
+
 
 main {
     flex: 1;
@@ -47,7 +226,7 @@ main > ul {
     display: inline-flex;
     gap: 50px;
     list-style-type: none;
-    padding: 10px 0px 10px 0px;
+    padding: 60px 0px 10px 0px;
 }
 
 main > ul > li > button{
@@ -113,29 +292,9 @@ main > ul > li > button.active{
     filter: brightness(1.2);
 }
 
-
-.sidebar {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 0;
-    /* Começa fechado */
-    position: fixed;
-    /* Fixa na tela */
-    z-index: 1000;
-    /* Sobrepõe tudo */
-    top: 0;
-    left: 0;
-    background-color: #0064B6;
-    overflow-x: hidden;
-    transition: 0.5s;
-    /* Animação suave ao abrir */
-    padding-top: 10px;
-}
-
 .barElement{
     color: white;
-    padding: 20px;
+    padding: 10px 20px 20px 47px;
     text-decoration: none;
 }
 
@@ -143,20 +302,6 @@ main > ul > li > button.active{
     opacity: 0.8;
     cursor: pointer;
 }
-
-.closebtn{
-    display: flex;
-    color: white;
-    text-decoration: none;
-    padding: 20px;
-    font-size:xx-large;
-    
-}
-
-.closebtn:hover{
-    opacity: 0.8;
-}
-
 
 .painelMaior {
     display: flex;

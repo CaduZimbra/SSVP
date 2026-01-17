@@ -5,12 +5,11 @@
     font-family: "Poppins", sans-serif;
 }
 
-
 #container {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    padding-top: 20px;
+    padding-top: 40px;
 }
 
 header {
@@ -156,7 +155,7 @@ header {
 
     a {
         text-decoration: none;
-        color: #003c93;
+        color: #0064B6;
     }
 }
 
@@ -178,7 +177,7 @@ header {
     /* Sobrepõe tudo */
     top: 0;
     left: 0;
-    background-color: #2196f3;
+    background-color: #0064B6;
     overflow-x: hidden;
     transition: 0.5s;
     /* Animação suave ao abrir */
@@ -222,7 +221,7 @@ header {
     flex-direction: column;
     width: 30%;
     justify-content: center;
-    background-color: #003c93;
+    background-color: #0064B6;
     color: white;
     padding: 20px;
     margin: 20px;   
@@ -275,11 +274,11 @@ header {
 }
 
 #abaUltima {
-    margin-right: 35px;
+    margin-right: 27px;
 }
 
 #abaProxima {
-    margin-left: 35px;
+    margin-left: 27px;
 }
 
 .conteudoEscala {
