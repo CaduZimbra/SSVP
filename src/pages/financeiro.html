@@ -11,46 +11,93 @@
         rel="stylesheet">
     <title>Página inicial - SSVP</title>
     <link rel="stylesheet" href="../styles/financeiro.css">
-
 </head>
 
 <body>
 
     <header>
-        <h1 class="texto-desktop">SSVP - Sociedade São Vicente de Paula</h1>
-        <h1 class="texto-mobile">SSVP</h1>
 
-        <nav>
-
-            <ul class="menu">
+        <div class="header-superior">
+            <ul>
                 <li>
-                    <a href="inicio.html">
-                        Página inicial
-                    </a>
-                    <a href="financeiro.html">
-                        Financeiro
-                    </a>
-                    <a href="calendario.html">
-                        Calendário
-                    </a>
-                    <a href="info.html">
-                        Informações
-                    </a>
+                    <button id="botaoMenu" onclick="toggleMenu()"><img src="../assets/menu-aberto.png" width="30px"
+                        height="30px"></button>
                 </li>
-
+                <li>
+                    <a href="inicio.html"> <img src="../assets/home.png" alt="Ínicio"></a>
+                </li>
             </ul>
-        </nav>
+
+            <div>
+                <h1 class="texto-desktop"> Sociedade São Vicente de Paulo</h1>
+                <h1 class="texto-mobile">SSVP</h1>
+            </div>
+            <div class="menu-perfil">
+                <button id="botao-menu-perfil">
+                    <img id="perfil" src="../assets/perfil-abrir.png" alt="Perfil">
+                </button>
+            </div>
+        </div>
+        
+        <div id="menu-perfil">
+            <button id="fechar-menu">
+                <img id="perfil" src="../assets/perfil-fechar.png" alt="Perfil">
+            </button>
+
+            <ul>
+                <li><a href="#">Minha Conta</a></li>
+                <li><a href="#">Configurações</a></li>
+                <li><a href="login.html">Sair</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar" id="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()"> x </a>
+            <a href="financeiro.html" class="barElement">Atas e Financeiro</a>
+            <a href="calendario.html" class="barElement">Calendário e Progresso</a>
+            <a href="info.html" class="barElement">Dados e Orações</a>
+        </div>
 
     </header>
+
     <main>
 
+        <!-- Botões das Abas -->
+        <ul class="tabs">
+            <li>
+                <button class="tab-btn active" data-tab="financeiro"> 
+                    Financeiro
+                </button>
+            </li>
+            <li>
+                <button class="tab-btn" data-tab="atasereunioes"> 
+                    Atas e Reuniões
+                </button>
+            </li>
+        </ul>
+
+        <!-- Conteúdo das Abas | Primário ativo-->
+        <div class="tabs-conteudo">
+
+            <div class="aba-conteudo aba-aberta" id="financeiro">
+                <h2>Financeiro</h2>
+                <p>Conteúdo</p>
+            </div> 
+
+            <div class="aba-conteudo" id="atasereunioes">
+                <h2>Atas e Reuniões</h2>
+                <p>Conteúdo</p>
+            </div>
+            
+        </div>
     </main>
+
 
     <footer>
         <p>&copy; 2025 SSVP - Todos os direitos reservados</p>
     </footer>
 
-    <script src="../scripts/inicio.js"></script>
+    <script src="../scripts/financeiro.js"></script>
 
 </body>
 
