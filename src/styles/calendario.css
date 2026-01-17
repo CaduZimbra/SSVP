@@ -218,6 +218,45 @@ main {
     align-items: center;
 }
 
+main > ul {
+    display: inline-flex;
+    gap: 50px;
+    list-style-type: none;
+    padding: 60px 0px 10px 0px;
+}
+
+main > ul > li > button{
+    cursor: pointer;
+    color: #0064B6;
+    padding: 5px 40px;
+    background-color: white;
+    border-radius: 100px;
+    border: 2px solid #0064B6;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+main > ul > li > button.active{
+    cursor: pointer;
+    color: white;
+    padding: 5px 40px;
+    background-color: #0064B6;
+    border-radius: 100px;
+    border: 2px solid #0064B6;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.aba-conteudo {
+    display: none;
+}
+
+.aba-aberta {
+    display: block;
+}
+
+#progresso {
+    padding-top: 40px;
+}
+
 #botaoMenu {
     border: 0;
     background-color: white;
@@ -275,7 +314,7 @@ main {
     overflow: hidden;
     color: rgb(0, 119, 255);
     padding: 15px;         /* Reduzi um pouco o padding */
-    margin: 20px auto;     /* Centraliza na tela */
+    margin: 60px auto;     /* Centraliza na tela */
 }
 
 

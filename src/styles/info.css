@@ -72,7 +72,7 @@ header {
 
 /* ------------Ínicio Menu flutuante------------ */
 #menu-perfil {
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 20px;
     width: 240px;
@@ -138,10 +138,7 @@ header {
     background-color: white;
 }
 
-.me {
-    width: 60px;
-    height: 60px;
-}
+
 
 .texto-mobile {
     display: none;
@@ -151,22 +148,21 @@ header {
     display: inline-flex;
     gap: 30px;
     padding: 20px;
+}
 
-    li{
-        list-style: none;
-    }
+.menu li {
+    list-style: none;
+}
 
-    a {
-        text-decoration: none;
-        color: #0064B6;
-    }
+.menu a {
+    text-decoration: none;
+    color: #0064B6;
 }
 
 .menu a:hover {
     text-decoration: underline;
     filter: brightness(1.2);
 }
-
 
 .sidebar {
     display: flex;
@@ -213,8 +209,6 @@ header {
     opacity: 0.8;
 }
 
-
-
 main {
     flex: 1;
     flex-direction: column;
@@ -249,100 +243,30 @@ main > ul > li > button.active{
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-.aba-conteudo {
-    display: none;
-}
 
-.aba-aberta {
+/* apenas a aba aberta aparece */
+.aba-conteudo.aba-aberta {
     display: block;
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
 
-#botaoMenu{
-    border: 0;
-    background-color: white;
-    padding: 8px;
-}
-
-#botaoMenu:hover{
-    opacity: 0.5;
-    cursor: pointer;
-}
-
-.texto-mobile {
-    display: none;
-}
-
-.menu {
-    display: inline-flex;
-    gap: 30px;
-    padding: 20px 20px 15px 20px;
-
-    li{
-        list-style: none;
-    }
-
-    a {
-        text-decoration: none;
-        color: #003c93;
-    }
-}
-
-.menu a:hover {
-    text-decoration: underline;
-    filter: brightness(1.2);
-}
-
-.barElement{
-    color: white;
-    padding: 10px 20px 20px 47px;
-    text-decoration: none;
-}
-
-.barElement:hover{
-    opacity: 0.8;
-    cursor: pointer;
-}
-
-.painelMaior {
+footer {
     display: flex;
-    justify-content: space-between;
-    height: 200px;
-}
-
-.itemPainelMaior {
-    display: flex;
-    flex-direction: column;
-    width: 30%;
+    padding: 20px;
     justify-content: center;
     background-color: #003c93;
     color: white;
-    padding: 20px;
-    margin: 20px;   
-    border-radius: 16px;
-    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-    text-decoration: none;
-}
-.itemPainelMaior:hover {
-    filter: brightness(1.2);
-    cursor: pointer;
-}
-.painelMeio {
-    display: flex;
-    justify-content: space-between; /* Distribui os dois cards nas pontas */
-    flex-wrap: wrap; /* Garante que no celular um fique embaixo do outro */
+
 }
 
-.itemPainelMeio {
-    display: flex;
-    flex-direction: column;
-    width: 45%; /* Reduzi de 40% para 45% para aproveitar melhor o espaço lateral */
-    min-height: 150px;
-    background-color: #2196f3;
-    color: white;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 16px;
-    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+@media (max-width: 600px) {
+    .texto-desktop { display: none; }
+    .texto-mobile { display: block; }
+
+    .menu{
+        font-size: 70%;
+    }
 }
 
 .painelFim {
@@ -366,11 +290,6 @@ main > ul > li > button.active{
     box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25)
 }
 
-.conteudoEscala {
-    display: flex;
-    justify-content: space-between;
-}
-
 
 .botaoAba {
     width: 30px;
@@ -382,53 +301,16 @@ main > ul > li > button.active{
 .seta {
     width: 30px;
     height: 30px;
+    transition: transform 0.3s ease;
 }
 
-
-footer {
-    display: flex;
-    padding: 20px;
-    justify-content: center;
-    background-color: #003c93;
-    color: white;
-
+.seta-girada {
+    transform: rotate(180deg);
 }
 
-@media (max-width: 600px) {
-    .texto-desktop { display: none; }
-    .texto-mobile { display: block; }
-
-    .menu{
-        font-size: 70%;
-    }
-    
-    /* Faz os cards ocuparem a largura toda no celular */
-    .itemPainelMaior, .itemPainelMeio {
-        width: 80%;
-        margin: 10px 0;
-    }
-    
-    .painelMaior {
-        flex-direction: column;
-        align-items: center;
-        height: auto; /* Deixa crescer conforme o conteúdo */
-    }
-
-    .painelMeio{
-        
-        justify-content: center;
-    }
-}
-
-
-.aba-conteudo{
-/* Em vez de display: none, usamos propriedades que o CSS consegue animar */
-    max-height: 0;
-    overflow: hidden;
+.aba-conteudo {
+    display: none;
     opacity: 0;
-    transition: max-height 0.5s ease-out, opacity 0.3s ease;
-    margin-top: 0;
-    padding-top: 0;
 }
 
 /* Esta classe será adicionada via JavaScript */
@@ -444,11 +326,144 @@ footer {
     border-top: 2px solid rgba(255,255,255,0.3);
 }
 
-/* Rotação da seta para dar um feedback visual */
-.seta {
-    transition: transform 0.3s ease;
+.titulo {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: max-content;
+    color: #2196f3;
+    padding: 20px;
+    margin: 20px;
+ text-align: center;
+    font-size: 24px;
+}
+.cadastro-familia {
+    padding: 20px;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
-.seta-girada {
-    transform: rotate(180deg);
+#formFamilia {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#formFamilia input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #003c93;
+}
+
+.btn-salvar {
+    background-color: #003c93;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#listaFamilias {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.itemPainelFim {
+    width: 90% !important;
+    max-width: 600px;
+    margin-bottom: 15px;
+  background-color: #2196f3;
+    border-radius: 16px;
+}
+
+.conteudoEscala {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    color: white;
+}
+
+.modal {
+    position: fixed; 
+    z-index: 9999; 
+    left: 0; 
+    top: 0;
+    width: 100%;
+     height: 100%; 
+     background-color: rgba(0,0,0,0.7);
+    display: none;
+     align-items: center; 
+     justify-content: center;
+}
+.modal-content {
+    background-color: white; 
+    padding: 25px;
+     border-radius: 15px;
+    width: 90%; 
+    max-width: 450px; 
+    color: #333;
+}
+    #formFamilia input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+}
+.input-grupo { 
+display: flex;
+    gap: 8px;
+    margin-bottom: 0px;
+}
+.membroMais {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+
+.input-grupo input { 
+    flex: 1; 
+    padding: 10px; 
+    border: 1px solid #ddd; 
+    border-radius: 8px;
+    margin-bottom: 0 !important; 
+}
+
+
+.btn-add { 
+    background: #2196f3; 
+    color: white; 
+    border: none; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+h2{
+    text-align: center;
+     color: #003c93; 
+     margin-top: 20px;
+     font-size: 30px;
+}
+.close{
+    cursor: pointer;
+    font-size: 40px;
+    border: none;
+}
+#areaMembros label {
+    display: block;
+    margin-bottom: 5px;
 }

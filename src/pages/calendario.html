@@ -61,69 +61,91 @@
 
     </header>
 
-    <div class="container">
-        <div class="calendario">
-            <div class="cabeca">
-                <div id="anterior" class="botao"><i class="fa-solid fa-arrow-left"></i></div>
-                <div id="mes"></div>
-                <div id="proximo" class="botao"><i class="fa-solid fa-arrow-right"></i></div>
-    <div id="busca" class = "botao"><i class="fa-solid fa-search"></i></div>
-    <div class="busca-calendario" id="painelBusca">
-        <select id="buscaMes">
-            <option value="0">Janeiro</option>
-            <option value="1">Fevereiro</option>
-            <option value="2">Março</option>
-            <option value="3">Abril</option>
-            <option value="4">Maio</option>
-            <option value="5">Junho</option>
-            <option value="6">Julho</option>
-            <option value="7">Agosto</option>
-            <option value="8">Setembro</option>
-            <option value="9">Outubro</option>
-            <option value="10">Novembro</option>
-            <option value="11">Dezembro</option>
-        </select>
+    <main class="container">
+        
+        <!-- Botões das Abas -->
+        <ul class="tabs">
+            <li>
+                <button class="tab-btn active" data-tab="calendario"> 
+                    Calendário
+                </button>
+            </li>
+            <li>
+                <button class="tab-btn" data-tab="progresso"> 
+                    Progresso
+                </button>
+            </li>
+        </ul>
 
-        <input type="number" id="buscaAno" placeholder="Ano" min="1900" max="2100">
+        <!-- Conteúdo das Abas | Primário ativo-->
+        <div class="tabs-conteudo">
+            <div class="aba-conteudo aba-aberta" id="calendario">
+                <div class="calendario">
+                    <div class="cabeca">
+                        <div id="anterior" class="botao"><i class="fa-solid fa-arrow-left"></i></div>
+                        <div id="mes"></div>
+                        <div id="proximo" class="botao"><i class="fa-solid fa-arrow-right"></i></div>
+                        <div id="busca" class = "botao"><i class="fa-solid fa-search"></i></div>
+                        <div class="busca-calendario" id="painelBusca">
+                            <select id="buscaMes">
+                                <option value="0">Janeiro</option>
+                                <option value="1">Fevereiro</option>
+                                <option value="2">Março</option>
+                                <option value="3">Abril</option>
+                                <option value="4">Maio</option>
+                                <option value="5">Junho</option>
+                                <option value="6">Julho</option>
+                                <option value="7">Agosto</option>
+                                <option value="8">Setembro</option>
+                                <option value="9">Outubro</option>
+                                <option value="10">Novembro</option>
+                                <option value="11">Dezembro</option>
+                            </select>
+                            <input type="number" id="buscaAno" placeholder="Ano" min="1900" max="2100">
+                            <button id="confirmarBusca">Ir</button>
+                        </div>
+                    </div>
+                    <div class="diasSemana">
+                        <div>Dom</div>
+                        <div>Seg</div>
+                        <div>Ter</div>
+                        <div>Qua</div>
+                        <div>Qui</div>
+                        <div>Sex</div>
+                        <div>Sáb</div>
+                    </div>
+                    <div class="dias" id="dias"></div>
+                </div>
 
-        <button id="confirmarBusca">Ir</button>
-    </div>
+                    <div id="modalEvento" class="modal">
+                        <div class="modal-content">
+                            <span class="close-modal">&times;</span>
+                            <h3 id="modalDataTitulo">Evento</h3>
+                            <div id="visualizarEvento">
+                                <p id="textoEventoExibicao" style="margin: 15px 0;"></p>
+                                <div class="modal-botoes">
+                                    <button id="btnEditar" class="btn-acao">Editar</button>
+                                    <button id="btnExcluir" class="btn-perigo">Excluir</button>
+                                </div>
+                            </div>
+                            <div id="formEvento">
+                                <textarea id="inputEvento" placeholder="Digite o compromisso..."></textarea>
+                                <button id="btnSalvar" class="btn-acao" style="width: 100%; margin-top: 10px;">Salvar</button>
+                            </div>
+                        </div>
+                    </div>
             </div>
-            <div class="diasSemana">
-                <div>Dom</div>
-                <div>Seg</div>
-                <div>Ter</div>
-                <div>Qua</div>
-                <div>Qui</div>
-                <div>Sex</div>
-                <div>Sáb</div>
-            </div>
-            <div class="dias" id="dias"></div>
+
+            <div class="aba-conteudo" id="progresso">
+                <h2>Progresso</h2>
+                <p>Conteúdo</p>
+            </div>  
         </div>
-    </div>
+    </main>
 
     <footer>
         <p>&copy; 2025 SSVP - Todos os direitos reservados</p>
     </footer>
-
-
-<div id="modalEvento" class="modal">
-    <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <h3 id="modalDataTitulo">Evento</h3>
-        <div id="visualizarEvento">
-            <p id="textoEventoExibicao" style="margin: 15px 0;"></p>
-            <div class="modal-botoes">
-                <button id="btnEditar" class="btn-acao">Editar</button>
-                <button id="btnExcluir" class="btn-perigo">Excluir</button>
-            </div>
-        </div>
-        <div id="formEvento">
-            <textarea id="inputEvento" placeholder="Digite o compromisso..."></textarea>
-            <button id="btnSalvar" class="btn-acao" style="width: 100%; margin-top: 10px;">Salvar</button>
-        </div>
-    </div>
-</div>
 
 </body>
 

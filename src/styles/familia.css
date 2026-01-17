@@ -5,23 +5,28 @@
     font-family: "Poppins", sans-serif;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+}
 
-#container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+body {
+  display: flex;
+  flex-direction: column;
 }
 
 header {
+    position: relative;
     width: 100%;
-    min-height: 150px;
+    min-height: 100px;
     display: flex;
     background-color: white;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: #003c93;
-    border-bottom: 5px solid #2196f3;
+    border-bottom: 3px solid #0064B6;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .header-superior {
@@ -29,19 +34,102 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 16px;
+    padding: 0px 32px;
 }
 
-#botaoMenu{
+.header-superior > ul {
+    display: inline-flex;
+    list-style-type: none;
+    gap: 10px;
+    align-items: center;
+}
+
+.header-superior img {
+    width: 30px;
+    height: 30px;
+}
+
+#perfil {
+    width: 60px;
+    height: 30px;
+}
+
+.header-superior button{
     border: 0;
     background-color: white;
     padding: 8px;
 }
 
-#botaoMenu:hover{
+.header-superior a:hover {
     opacity: 0.5;
     cursor: pointer;
 }
+
+.header-superior button:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+/* ------------Ínicio Menu flutuante------------ */
+#menu-perfil {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 240px;
+    height: 230px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+    padding: 0px 20px 20px 20px;
+
+    /*escondendo*/
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Menu aberto */
+#menu-perfil.ativo {
+    /*mostrando*/
+    display: grid;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Botão fechar */
+#fechar-menu {
+    text-align: right;
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#menu-perfil button:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+/* Lista do menu */
+#menu-perfil ul {
+    list-style: none;
+    padding: 0px;
+}
+
+#menu-perfil li {
+    text-align: right;
+    margin-bottom: 12px;
+    padding-right: 4px;
+}
+
+#menu-perfil a {
+    text-decoration: none;
+    color: #003c93;
+    font-weight: 500;
+}
+
+/* ------------Fim Menu flutuante------------ */
 
 #botaoMenuLateral {
     width: 60px;
@@ -50,7 +138,7 @@ header {
     background-color: white;
 }
 
-.vazio {
+.me {
     width: 60px;
     height: 60px;
 }
@@ -70,7 +158,7 @@ header {
 
     a {
         text-decoration: none;
-        color: #003c93;
+        color: #0064B6;
     }
 }
 
@@ -79,12 +167,11 @@ header {
     filter: brightness(1.2);
 }
 
-
 .sidebar {
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 0;
+    width: 0px;
     /* Começa fechado */
     position: fixed;
     /* Fixa na tela */
@@ -92,16 +179,18 @@ header {
     /* Sobrepõe tudo */
     top: 0;
     left: 0;
-    background-color: #2196f3;
+    background-color: #0064B6;
     overflow-x: hidden;
     transition: 0.5s;
     /* Animação suave ao abrir */
     padding-top: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
 .barElement{
     color: white;
-    padding: 20px;
+    
+    padding: 10px 20px 20px 47px;
     text-decoration: none;
 }
 
@@ -114,7 +203,7 @@ header {
     display: flex;
     color: white;
     text-decoration: none;
-    padding: 20px;
+    padding: 10px 20px 20px 47px;
     font-size:xx-large;
     
 }
@@ -123,84 +212,12 @@ header {
     opacity: 0.8;
 }
 
-
-.painelMaior {
-    display: flex;
-    justify-content: space-between;
-    height: 200px;
-}
-
-.itemPainelMaior {
-    display: flex;
+main {
+    flex: 1;
     flex-direction: column;
-    width: 30%;
-    justify-content: center;
-    background-color: #003c93;
-    color: white;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 16px;
-    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-}
-
-.painelMeio {
     display: flex;
-    justify-content: space-between; /* Distribui os dois cards nas pontas */
-    flex-wrap: wrap; /* Garante que no celular um fique embaixo do outro */
+    align-items: center;
 }
-
-.itemPainelMeio {
-    display: flex;
-    flex-direction: column;
-    width: 45%; /* Reduzi de 40% para 45% para aproveitar melhor o espaço lateral */
-    min-height: 150px;
-    background-color: #2196f3;
-    color: white;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 16px;
-    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-}
-
-.painelFim {
-    display: inline-flex;
-    width: 100%;
-    min-height: 400px;
-}
-
-
-.itemPainelFim {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    height: max-content;
-    background-color: #2196f3;
-    color: white;
-    width: 100%;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 16px;
-    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25)
-}
-
-.conteudoEscala {
-    display: flex;
-    justify-content: space-between;
-}
-
-
-.botaoAba {
-    width: 30px;
-    height: 30px;
-    border: none;
-    background-color: #2196f3;
-}
-
-.seta {
-    width: 30px;
-    height: 30px;
-}
-
 
 footer {
     display: flex;
@@ -237,9 +254,46 @@ footer {
     }
 }
 
+.painelFim {
+    display: inline-flex;
+    width: 100%;
+    min-height: 400px;
+}
+
+
+.itemPainelFim {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: max-content;
+    background-color: #2196f3;
+    color: white;
+    width: 100%;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 16px;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25)
+}
+
+
+.botaoAba {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: #2196f3;
+}
+
+.seta {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.seta-girada {
+    transform: rotate(180deg);
+}
 
 .aba-conteudo{
-
     max-height: 0;
     overflow: hidden;
     opacity: 0;
@@ -261,14 +315,6 @@ footer {
     border-top: 2px solid rgba(255,255,255,0.3);
 }
 
-/* Rotação da seta para dar um feedback visual */
-.seta {
-    transition: transform 0.3s ease;
-}
-
-.seta-girada {
-    transform: rotate(180deg);
-}
 .titulo {
         display: flex;
     flex-direction: column;
@@ -395,14 +441,6 @@ display: flex;
     flex-shrink: 0;
 }
 
-.aba-conteudo {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-}
-.aba-aberta {
-    max-height: 600px; 
-}
 h2{
     text-align: center;
      color: #003c93; 

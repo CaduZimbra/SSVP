@@ -11,73 +11,87 @@
         <header>
 
         <div class="header-superior">
-            <button id="botaoMenu" onclick="toggleMenu()"><img src="../assets/menu-aberto.png" width="30"
-                    height="30"></button>
+            <ul>
+                <li>
+                    <button id="botaoMenu" onclick="toggleMenu()"><img src="../assets/menu-aberto.png" width="30px"
+                        height="30px"></button>
+                </li>
+                <li>
+                    <a href="inicio.html"> <img src="../assets/home.png" alt="Ínicio"></a>
+                </li>
+            </ul>
 
             <div>
-                <h1 class="texto-desktop">SSVP - Sociedade São Vicente de Paulo</h1>
+                <h1 class="texto-desktop"> Sociedade São Vicente de Paulo</h1>
                 <h1 class="texto-mobile">SSVP</h1>
             </div>
-            <div class="vazio">
-
+            <div class="menu-perfil">
+                <button id="botao-menu-perfil">
+                    <img id="perfil" src="../assets/perfil-abrir.png" alt="Perfil">
+                </button>
             </div>
         </div>
+        
+        <div id="menu-perfil">
+            <button id="fechar-menu">
+                <img id="perfil" src="../assets/perfil-fechar.png" alt="Perfil">
+            </button>
 
-        <nav>
-
-            <ul class="menu">
-                <li><a href="inicio.html">Página inicial</a></li>
-                <li><a href="financeiro.html">Financeiro </a></li>
-                <li><a href="calendario.html">Calendário</a></li>
-                <li><a href="info.html">Informações</a></li>
+            <ul>
+                <li><a href="#">Minha Conta</a></li>
+                <li><a href="#">Configurações</a></li>
+                <li><a href="#">Sair</a></li>
             </ul>
-        </nav>
-
+        </div>
 
         <div class="sidebar" id="sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()"> x </a>
-            <a class="barElement">Atas e reuiniões</a>
-            <a class="barElement">Minha conta</a>
-            <a class="barElement">Configurações</a>
-            <a href="inicio.html" class="barElement">Sair</a>
+            <a href="financeiro.html" class="barElement">Atas e Financeiro</a>
+            <a href="calendario.html" class="barElement">Calendário e Progresso</a>
+            <a href="info.html" class="barElement">Dados e Orações</a>
         </div>
 
     </header>
-<main id="container">
-        <h2>Famílias Assistidas</h2>
-    <section id="listaFamilias">
-        </section>
-    <div style="text-align: center; padding: 20px;">
-        <button class="btn-salvar" style="width: 250px;" onclick="abrirModal()">+ Cadastrar Nova Família</button>
-    </div>
-
-    <div id="modalCadastro" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="fecharModal()">&times;</span>
-            <h2 style="color: #003c93; margin-bottom: 40px;">Novo Cadastro</h2>
-            
-            <form id="formFamilia">
-                <input type="text" id="nomeFamilia" placeholder="Nome da Família" required>
-                
-                <div id="areaMembros">
-                    <div class="input-grupo">
-                        <input type="text" class="membro-input" placeholder="Nome do membro">
-                        <button type="button" onclick="adicionarCampoMembro()" class="btn-add">+</button>
-                    </div>
-                </div>
-
-                <input type="text" id="cpf" placeholder="CPF do Responsável" required>
-                <input type="text" id="endereco" placeholder="Endereço Completo" required>
-                
-                <div style="margin-top: 10px;">
-                    <label style="font-size: 14px; color: #666;">Data de Admissão:</label>
-                    <input type="date" id="dataAdmissao" required>
-                </div>
-                
-                <button type="submit" class="btn-salvar" style="width: 100%; margin-top: 20px;">Finalizar Cadastro</button>
-            </form>
+    <main >
+            <h2>Famílias Assistidas</h2>
+        <section id="listaFamilias">
+            </section>
+        <div style="text-align: center; padding: 20px;">
+            <button class="btn-salvar" style="width: 250px;" onclick="abrirModal()">+ Cadastrar Nova Família</button>
         </div>
-    </div>
-</main>
+
+        <div id="modalCadastro" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="fecharModal()">&times;</span>
+                <h2 style="color: #003c93; margin-bottom: 40px;">Novo Cadastro</h2>
+                
+                <form id="formFamilia">
+                    <input type="text" id="nomeFamilia" placeholder="Nome da Família" required>
+                    
+                    <div id="areaMembros">
+                        <div class="input-grupo">
+                            <input type="text" class="membro-input" placeholder="Nome do membro">
+                            <button type="button" onclick="adicionarCampoMembro()" class="btn-add">+</button>
+                        </div>
+                    </div>
+
+                    <input type="text" id="cpf" placeholder="CPF do Responsável" required>
+                    <input type="text" id="endereco" placeholder="Endereço Completo" required>
+                    
+                    <div style="margin-top: 10px;">
+                        <label style="font-size: 14px; color: #666;">Data de Admissão:</label>
+                        <input type="date" id="dataAdmissao" required>
+                    </div>
+                    
+                    <button type="submit" class="btn-salvar" style="width: 100%; margin-top: 20px;">Finalizar Cadastro</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 SSVP - Todos os direitos reservados</p>
+    </footer>
+
 </body>
 </html>
