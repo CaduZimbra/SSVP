@@ -82,14 +82,47 @@
             <div class="aba-conteudo aba-aberta" id="financeiro">
                 <h2>Financeiro</h2>
                 <p>Conteúdo</p>
+                
             </div> 
 
-            <div class="aba-conteudo" id="atasereunioes">
-                <h2>Atas e Reuniões</h2>
-                <p>Conteúdo</p>
-            </div>
+    <div class="aba-conteudo" id="atasereunioes">
+    <h2 class="titulo-central">Atas e Reuniões</h2>
+
+    <section id="AtasReunioes" class="container-central">
+    </section>
+
+    <div class="wrapper-botao">
+        <button class="btn-salvar" style="width: 250px;" onclick="abrirModal()">+ Adicionar nova Ata</button>
+    </div>
+
+    <div id="modalCadastro" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal()">&times;</span>
+            <h2 style="color: #003c93; margin-bottom: 20px;">Nova Ata/Reunião</h2>
             
+            <form id="formAtaReuniao">
+                <div class="input-duplo">
+                    <input type="text" id="NumeroAta" placeholder="Ata N° X" required>
+                    <input type="number" id="Num" placeholder="N° Membros" required>
+                </div>
+                
+                <div style="margin-bottom: 10px;">
+                    <label style="font-size: 14px; color: #666; display: block; text-align: left;">Data da Reunião:</label>
+                    <input type="date" id="dataAta" required style="width: 100%;">
+                </div>
+
+                <textarea id="inicioAta" placeholder="Início (Horário/Abertura)"></textarea>
+                <textarea id="coletaAta" placeholder="Coleta na Reunião"></textarea>
+                <textarea id="escalaAta" placeholder="Escala"></textarea>
+                <textarea id="obrasAta" placeholder="Obras Espirituais"></textarea>
+                <textarea id="pendenciasAta" placeholder="Pendências para próxima semana"></textarea>
+                <textarea id="terminoAta" placeholder="Término"></textarea>
+                
+                <button type="submit" class="btn-salvar" style="width: 100%; margin-top: 20px;">Salvar Reunião</button>
+            </form>
         </div>
+    </div>
+</div>
     </main>
 
 
