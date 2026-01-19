@@ -228,7 +228,7 @@ main > ul {
     display: inline-flex;
     gap: 50px;
     list-style-type: none;
-    padding: 60px 0px 10px 0px;
+    padding: 40px 0px 10px 0px;
 }
 
 main > ul > li > button{
@@ -349,8 +349,10 @@ footer {
 
 .btn-salvar {
     background-color: #003c93;
+    width: 100%;
+    height: 50px;
     color: white;
-    padding: 12px;
+    padding: 15px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -408,9 +410,9 @@ background-color: white;
 h2{
     text-align: center;
      color: #003c93; 
-     margin-top: 20px;
      font-size: 30px;
 }
+
 .close{
 position: absolute;
     top: 10px;
@@ -440,7 +442,8 @@ position: absolute;
 .wrapper-botao {
     display: flex;
     justify-content: center;
-    width: 100%;
+    min-width: 700px;
+    min-height: 150px;
     padding: 20px;
 }
 

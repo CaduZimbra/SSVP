@@ -6,7 +6,7 @@
 }
 
 html, body {
-  height: 100%;
+  min-height: 100vh;
   margin: 0;
 }
 
@@ -214,13 +214,14 @@ main {
     flex-direction: column;
     display: flex;
     align-items: center;
+    min-height: 300px;
 }
 
 main > ul {
     display: inline-flex;
     gap: 50px;
     list-style-type: none;
-    padding: 60px 0px 10px 0px;
+    padding: 40px 0px 10px 0px;
 }
 
 main > ul > li > button{
@@ -320,11 +321,9 @@ footer {
 
 /* Esta classe será adicionada via JavaScript */
 .aba-aberta {
-
     display: flex;
     flex-direction: column;
     gap: 15px;
-    max-height: 500px; /* Um valor alto o suficiente para caber o texto */
     opacity: 1;
     margin-top: 15px;
     padding-top: 15px;
@@ -362,8 +361,9 @@ footer {
 
 .btn-salvar {
     background-color: #003c93;
+    width: 100%;
     color: white;
-    padding: 12px;
+    padding: 15px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -375,11 +375,13 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-width: 700px;
+    
 }
 
 
 .itemPainelFim {
-    width: 90% !important;
+    width: 100% !important;
     max-width: 600px;
     margin-bottom: 15px;
   background-color: #2196f3;
@@ -460,7 +462,6 @@ display: flex;
 h2{
     text-align: center;
      color: #003c93; 
-     margin-top: 20px;
      font-size: 30px;
 }
 .close{

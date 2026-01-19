@@ -5,11 +5,23 @@
     font-family: "Poppins", sans-serif;
 }
 
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
 #container {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    padding-top: 40px;
+    padding-top: 20px;
 }
 
 header {
@@ -255,7 +267,7 @@ header {
 .painelFim {
     display: inline-flex;
     width: 100%;
-    min-height: 400px;
+    min-height: 380px;
 }
 
 

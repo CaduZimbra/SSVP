@@ -63,97 +63,100 @@
 
     <main>
 
+    <div id="container">
+        <div class="painelMaior">
+            <a href="financeiro.html" class="itemPainelMaior" id="financeiro">
+                <h3>Saldo em caixa</h3>
+                <p>R$<span id="valorSaldo">...</span> </p>
+            </a>
 
-<div id="container">
-    <div class="painelMaior">
-        <a href="financeiro.html" class="itemPainelMaior" id="financeiro">
-            <h3>Saldo em caixa</h3>
-            <p>R$<span id="valorSaldo">...</span> </p>
-        </a>
+            <a href="info.html" class="itemPainelMaior" id="familia">
+            <h3>Famílias assistidas</h3>
+            <p>0</p> 
+            </a>
 
-        <a href="info.html" class="itemPainelMaior" id="familia">
-        <h3>Famílias assistidas</h3>
-        <p>0</p> 
-        </a>
+            <a href="info.html" class="itemPainelMaior" id="oracoes">
+                <h3>Orações</h3>
+            </a>
+        </div>
 
-        <a href="info.html" class="itemPainelMaior" id="oracoes">
-            <h3>Orações</h3>
-        </a>
+
+                <div class="painelMeio">
+                    <div class="itemPainelMeio">
+                        <h3>Última reunião</h3>
+                        <p>Ata Nº X</p>
+                        <p>Membros presentes: 3</p>
+                        <p>10/10/2025</p>
+                    </div>
+
+                    <div class="itemPainelMeio">
+                        <h3>Próximo Compromisso</h3>
+                        <div id="exibirProximoCompromisso">
+                            <p>Nenhum compromisso agendado.</p>
+                        </div>
+                    </div>
+
+                    <div class="painelFim">
+
+                        <div class="itemPainelFim" id="abaUltima">
+                            <div class="conteudoEscala">
+                                <h3>Última Escala de Visita</h3>
+                                <button class="botaoAba" onclick="toggleAba('conteudoAbaUltima', this)"><img
+                                        src="../assets/setaBaixo.png" class="seta"></button>
+                            </div>
+
+                            <div class="aba-conteudo" id="conteudoAbaUltima">
+                                <div>
+                                    <h4>Familia Silva</h4>
+                                    <p>23/11/2025 18:00 </p>
+                                    <p>Responsáveis: Lara e Vinícius</p>
+                                </div>
+
+                                <div>
+                                    <h4>Familia Nunes</h4>
+                                    <p>11/11/2025 19:00 </p>
+                                    <p>Responsáveis: Breno e Débora</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="itemPainelFim" id="abaProxima">
+                            <div class="conteudoEscala">
+                                <h3>Próxima Escala de Visita</h3>
+                                <button class="botaoAba" onclick="toggleAba('conteudoAbaProxima', this)"><img
+                                        src="../assets/setaBaixo.png" class="seta"></button>
+                            </div>
+
+                            <div class="aba-conteudo" id="conteudoAbaProxima">
+                                <div>
+                                    <h4>Familia Carvalho</h4>
+                                    <p>10/01/2026 13:00 </p>
+                                    <p>Responsáveis: Victor e Maria</p>
+                                </div>
+
+                                <div>
+                                    <h4>Familia Silva</h4>
+                                    <p>29/01/2026 15:00 </p>
+                                    <p>Responsáveis: Lara e Vinícios</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
     </div>
 
-
-            <div class="painelMeio">
-                <div class="itemPainelMeio">
-                    <h3>Última reunião</h3>
-                    <p>Ata Nº X</p>
-                    <p>Membros presentes: 3</p>
-                    <p>10/10/2025</p>
-                </div>
-
-                <div class="itemPainelMeio">
-                    <h3>Próximo Compromisso</h3>
-                    <div id="exibirProximoCompromisso">
-                        <p>Nenhum compromisso agendado.</p>
-                    </div>
-                </div>
-
-                <div class="painelFim">
-
-                    <div class="itemPainelFim" id="abaUltima">
-                        <div class="conteudoEscala">
-                            <h3>Última Escala de Visita</h3>
-                            <button class="botaoAba" onclick="toggleAba('conteudoAbaUltima', this)"><img
-                                    src="../assets/setaBaixo.png" class="seta"></button>
-                        </div>
-
-                        <div class="aba-conteudo" id="conteudoAbaUltima">
-                            <div>
-                                <h4>Familia Silva</h4>
-                                <p>23/11/2025 18:00 </p>
-                                <p>Responsáveis: Lara e Vinícius</p>
-                            </div>
-
-                            <div>
-                                <h4>Familia Nunes</h4>
-                                <p>11/11/2025 19:00 </p>
-                                <p>Responsáveis: Breno e Débora</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="itemPainelFim" id="abaProxima">
-                        <div class="conteudoEscala">
-                            <h3>Próxima Escala de Visita</h3>
-                            <button class="botaoAba" onclick="toggleAba('conteudoAbaProxima', this)"><img
-                                    src="../assets/setaBaixo.png" class="seta"></button>
-                        </div>
-
-                        <div class="aba-conteudo" id="conteudoAbaProxima">
-                            <div>
-                                <h4>Familia Carvalho</h4>
-                                <p>10/01/2026 13:00 </p>
-                                <p>Responsáveis: Victor e Maria</p>
-                            </div>
-
-                            <div>
-                                <h4>Familia Silva</h4>
-                                <p>29/01/2026 15:00 </p>
-                                <p>Responsáveis: Lara e Vinícios</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-
-</div>
     </main>
 
     <footer>
+
         <p>&copy; 2025 SSVP - Todos os direitos reservados</p>
+        
     </footer>
+
 
     <script src="../scripts/inicio.js"></script>
 
