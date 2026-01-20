@@ -17,16 +17,16 @@ function atualizarTela() {
     saldoDisplay.innerText = financeiro.saldo.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
 
 
-    extratoContainer.innerHTML = '<h3>Extrato</h3>';
+    extratoContainer.innerHTML = '<h3 class = "name-extrato">Extrato</h3>';
     financeiro.historico.forEach(item => {
         const div = document.createElement('div');
         div.className = 'item-extrato';
         div.innerHTML = `
-            <hr>
-            <p>Data: ${item.data}</p>
+            <br>
             <p>Tipo: <strong>${item.tipo}</strong></p>
             <p>Descrição: ${item.descricao}</p>
             <p>Valor: ${item.valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
+             <p>Data: ${item.data}</p>
         `;
         extratoContainer.appendChild(div);
     });
@@ -68,10 +68,19 @@ btnEnviar.addEventListener('click', () => {
 
     salvarDados();
     atualizarTela();
+    finalizarEnvio();
 
 
     valorInput.value = '';
 });
 
+function finalizarEnvio() {
+    descricao.value = "";
+    descricao.style.height = "auto"; 
+    document.getElementById('valor-input').value = "";
+}
+
+
 
 atualizarTela();
+
