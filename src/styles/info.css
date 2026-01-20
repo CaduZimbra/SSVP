@@ -473,3 +473,20 @@ h2{
     display: block;
     margin-bottom: 5px;
 }
+
+/*Texto das Orações*/
+
+#oracoes.aba-conteudo.aba-aberta {
+    display: flex;
+    align-items: center;
+}
+
+#Oracoes-Iniciais {
+    width: 90%;
+    padding-bottom: 60px;
+}
+
+#Oracoes-Iniciais > h3 {
+    text-align: center;
+
+}

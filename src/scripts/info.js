@@ -31,6 +31,26 @@ botoes.forEach(botao => {
   });
 });
 
+window.addEventListener('DOMContentLoaded', () => {
+  const hash = window.location.hash.replace('#', '');
+
+  if (!hash) return;
+
+  // remove estados atuais
+  botoes.forEach(b => b.classList.remove('active'));
+  conteudos.forEach(c => c.classList.remove('aba-aberta'));
+
+  // ativa a aba vinda do link
+  const botao = document.querySelector(`.tab-btn[data-tab="${hash}"]`);
+  const conteudo = document.getElementById(hash);
+
+  if (botao && conteudo) {
+    botao.classList.add('active');
+    conteudo.classList.add('aba-aberta');
+  }
+});
+
+
 const botaoMenuPerfil = document.getElementById("botao-menu-perfil");
 const menuPerfil = document.getElementById("menu-perfil");
 const fecharMenu = document.getElementById("fechar-menu");
