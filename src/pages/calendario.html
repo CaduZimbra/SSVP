@@ -22,7 +22,7 @@
             <ul>
                 <li>
                     <button id="botaoMenu" onclick="toggleMenu()"><img src="../assets/menu-aberto.png" width="30px"
-                        height="30px"></button>
+                            height="30px"></button>
                 </li>
                 <li>
                     <a href="inicio.html"> <img src="../assets/home.png" alt="Ínicio"></a>
@@ -39,7 +39,7 @@
                 </button>
             </div>
         </div>
-        
+
         <div id="menu-perfil">
             <button id="fechar-menu">
                 <img id="perfil" src="../assets/perfil-fechar.png" alt="Perfil">
@@ -62,16 +62,16 @@
     </header>
 
     <main class="container">
-        
+
         <!-- Botões das Abas -->
         <ul class="tabs">
             <li>
-                <button class="tab-btn active" data-tab="calendario"> 
+                <button class="tab-btn active" data-tab="calendario">
                     Calendário
                 </button>
             </li>
             <li>
-                <button class="tab-btn" data-tab="progresso"> 
+                <button class="tab-btn" data-tab="progresso">
                     Progresso
                 </button>
             </li>
@@ -85,7 +85,7 @@
                         <div id="anterior" class="botao"><i class="fa-solid fa-arrow-left"></i></div>
                         <div id="mes"></div>
                         <div id="proximo" class="botao"><i class="fa-solid fa-arrow-right"></i></div>
-                        <div id="busca" class = "botao"><i class="fa-solid fa-search"></i></div>
+                        <div id="busca" class="botao"><i class="fa-solid fa-search"></i></div>
                         <div class="busca-calendario" id="painelBusca">
                             <select id="buscaMes">
                                 <option value="0">Janeiro</option>
@@ -117,29 +117,30 @@
                     <div class="dias" id="dias"></div>
                 </div>
 
-                    <div id="modalEvento" class="modal">
-                        <div class="modal-content">
-                            <span class="close-modal">&times;</span>
-                            <h3 id="modalDataTitulo">Evento</h3>
-                            <div id="visualizarEvento">
-                                <p id="textoEventoExibicao" style="margin: 15px 0;"></p>
-                                <div class="modal-botoes">
-                                    <button id="btnEditar" class="btn-acao">Editar</button>
-                                    <button id="btnExcluir" class="btn-perigo">Excluir</button>
-                                </div>
-                            </div>
-                            <div id="formEvento">
-                                <textarea id="inputEvento" placeholder="Digite o compromisso..."></textarea>
-                                <button id="btnSalvar" class="btn-acao" style="width: 100%; margin-top: 10px;">Salvar</button>
+                <div id="modalEvento" class="modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <h3 id="modalDataTitulo">Evento</h3>
+                        <div id="visualizarEvento">
+                            <p id="textoEventoExibicao" style="margin: 15px 0;"></p>
+                            <div class="modal-botoes">
+                                <button id="btnEditar" class="btn-acao">Editar</button>
+                                <button id="btnExcluir" class="btn-perigo">Excluir</button>
                             </div>
                         </div>
+                        <div id="formEvento">
+                            <textarea id="inputEvento" placeholder="Digite o compromisso..."></textarea>
+                            <button id="btnSalvar" class="btn-acao"
+                                style="width: 100%; margin-top: 10px;">Salvar</button>
+                        </div>
                     </div>
+                </div>
             </div>
 
             <div class="aba-conteudo" id="progresso">
                 <h2>Progresso</h2>
                 <p>Conteúdo</p>
-            </div>  
+            </div>
         </div>
     </main>
 

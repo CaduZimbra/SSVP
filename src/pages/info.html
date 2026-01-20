@@ -21,7 +21,7 @@
             <ul>
                 <li>
                     <button id="botaoMenu" onclick="toggleMenu()"><img src="../assets/menu-aberto.png" width="30px"
-                        height="30px"></button>
+                            height="30px"></button>
                 </li>
                 <li>
                     <a href="inicio.html"> <img src="../assets/home.png" alt="Ínicio"></a>
@@ -38,7 +38,7 @@
                 </button>
             </div>
         </div>
-        
+
         <div id="menu-perfil">
             <button id="fechar-menu">
                 <img id="perfil" src="../assets/perfil-fechar.png" alt="Perfil">
@@ -65,12 +65,12 @@
         <!-- Botões das Abas -->
         <ul class="tabs">
             <li>
-                <button class="tab-btn active" data-tab="dados"> 
+                <button class="tab-btn active" data-tab="dados">
                     Dados
                 </button>
             </li>
             <li>
-                <button class="tab-btn" data-tab="oracoes"> 
+                <button class="tab-btn" data-tab="oracoes">
                     Orações
                 </button>
             </li>
@@ -81,40 +81,41 @@
 
             <div class="aba-conteudo aba-aberta" id="dados">
                 <h2>Famílias Assistidas</h2>
-        <section id="listaFamilias">
-            </section>
-        <div style="text-align: center; padding: 20px 20px 80px 20px; min-width: 300px;">
-            <button class="btn-salvar" onclick="abrirModal()">+ Cadastrar Nova Família</button>
-        </div>
+                <section id="listaFamilias">
+                </section>
+                <div style="text-align: center; padding: 20px 20px 80px 20px; min-width: 300px;">
+                    <button class="btn-salvar" onclick="abrirModal()">+ Cadastrar Nova Família</button>
+                </div>
 
-        <div id="modalCadastro" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="fecharModal()">&times;</span>
-                <h2 style="color: #003c93; margin-bottom: 40px;">Novo Cadastro</h2>
-                
-                <form id="formFamilia">
-                    <input type="text" id="nomeFamilia" placeholder="Nome da Família" required>
-                    
-                    <div id="areaMembros">
-                        <div class="input-grupo">
-                            <input type="text" class="membro-input" placeholder="Nome do membro">
-                            <button type="button" onclick="adicionarCampoMembro()" class="btn-add">+</button>
-                        </div>
-                    </div>
+                <div id="modalCadastro" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="fecharModal()">&times;</span>
+                        <h2 style="color: #003c93; margin-bottom: 40px;">Novo Cadastro</h2>
 
-                    <input type="text" id="cpf" placeholder="CPF do Responsável" required>
-                    <input type="text" id="endereco" placeholder="Endereço Completo" required>
-                    
-                    <div style="margin-top: 10px;">
-                        <label style="font-size: 14px; color: #666;">Data de Admissão:</label>
-                        <input type="date" id="dataAdmissao" required>
+                        <form id="formFamilia">
+                            <input type="text" id="nomeFamilia" placeholder="Nome da Família" required>
+
+                            <div id="areaMembros">
+                                <div class="input-grupo">
+                                    <input type="text" class="membro-input" placeholder="Nome do membro">
+                                    <button type="button" onclick="adicionarCampoMembro()" class="btn-add">+</button>
+                                </div>
+                            </div>
+
+                            <input type="text" id="cpf" placeholder="CPF do Responsável" required>
+                            <input type="text" id="endereco" placeholder="Endereço Completo" required>
+
+                            <div style="margin-top: 10px;">
+                                <label style="font-size: 14px; color: #666;">Data de Admissão:</label>
+                                <input type="date" id="dataAdmissao" required>
+                            </div>
+
+                            <button type="submit" class="btn-salvar" style="width: 100%; margin-top: 20px;">Finalizar
+                                Cadastro</button>
+                        </form>
                     </div>
-                    
-                    <button type="submit" class="btn-salvar" style="width: 100%; margin-top: 20px;">Finalizar Cadastro</button>
-                </form>
+                </div>
             </div>
-        </div>     
-            </div> 
             <div class="aba-conteudo" id="oracoes">
                 <h2>Orações</h2>
                 <div id="Oracoes-Iniciais">
@@ -123,13 +124,16 @@
 
                     <p><span class="dirigente">Dirigente:</span> Em nome do Pai, do Filho e do Espírito Santo. Amém.</p>
 
-                    <p><span class="todos">Todos:</span> Vinde Espírito Santo, enchei os corações dos Vossos fiéis, e acendei neles o fogo do Vosso amor.</p>
+                    <p><span class="todos">Todos:</span> Vinde Espírito Santo, enchei os corações dos Vossos fiéis, e
+                        acendei neles o fogo do Vosso amor.</p>
 
                     <p><span class="dirigente">Dirigente:</span> Enviai o Vosso Espírito e tudo será criado.</p>
 
                     <p><span class="todos">Todos:</span> E renovareis a face da Terra.</p>
 
-                    <p><span class="oracao">Oremos:</span> Deus, que iluminastes os corações dos Vossos fiéis com as luzes do Espírito Santo, concedei-nos que, pelo mesmo Espírito, saibamos o que é reto e gozemos sempre de suas divinas consolações. Por Cristo Nosso Senhor, Amém.</p>
+                    <p><span class="oracao">Oremos:</span> Deus, que iluminastes os corações dos Vossos fiéis com as
+                        luzes do Espírito Santo, concedei-nos que, pelo mesmo Espírito, saibamos o que é reto e gozemos
+                        sempre de suas divinas consolações. Por Cristo Nosso Senhor, Amém.</p>
 
                     <p>Pai Nosso...</p>
 
@@ -157,7 +161,7 @@
 
                 </div>
             </div>
-            
+
         </div>
     </main>
 

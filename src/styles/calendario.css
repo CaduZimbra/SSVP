@@ -5,14 +5,15 @@
     font-family: "Poppins", sans-serif;
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
+html,
+body {
+    height: 100%;
+    margin: 0;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -37,7 +38,7 @@ header {
     padding: 0px 32px;
 }
 
-.header-superior > ul {
+.header-superior>ul {
     display: inline-flex;
     list-style-type: none;
     gap: 10px;
@@ -54,7 +55,7 @@ header {
     height: 30px;
 }
 
-.header-superior button{
+.header-superior button {
     border: 0;
     background-color: white;
     padding: 8px;
@@ -65,7 +66,7 @@ header {
     cursor: pointer;
 }
 
-.header-superior button:hover{
+.header-superior button:hover {
     opacity: 0.5;
     cursor: pointer;
 }
@@ -106,7 +107,7 @@ header {
     margin-bottom: 20px;
 }
 
-#menu-perfil button:hover{
+#menu-perfil button:hover {
     opacity: 0.5;
     cursor: pointer;
 }
@@ -152,7 +153,7 @@ header {
     gap: 30px;
     padding: 20px;
 
-    li{
+    li {
         list-style: none;
     }
 
@@ -160,6 +161,7 @@ header {
         text-decoration: none;
         color: #0064B6;
     }
+
 }
 
 .menu a:hover {
@@ -187,27 +189,27 @@ header {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
-.barElement{
+.barElement {
     color: white;
     padding: 10px 20px 20px 47px;
     text-decoration: none;
 }
 
-.barElement:hover{
+.barElement:hover {
     opacity: 0.8;
     cursor: pointer;
 }
 
-.closebtn{
+.closebtn {
     display: flex;
     color: white;
     text-decoration: none;
     padding: 10px 20px 20px 47px;
-    font-size:xx-large;
-    
+    font-size: xx-large;
+
 }
 
-.closebtn:hover{
+.closebtn:hover {
     opacity: 0.8;
 }
 
@@ -218,14 +220,14 @@ main {
     align-items: center;
 }
 
-main > ul {
+main>ul {
     display: inline-flex;
     gap: 50px;
     list-style-type: none;
     padding: 40px 0px 10px 0px;
 }
 
-main > ul > li > button{
+main>ul>li>button {
     cursor: pointer;
     color: #0064B6;
     width: 180px;
@@ -234,13 +236,13 @@ main > ul > li > button{
     border-radius: 100px;
     border: 2px solid #0064B6;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    transition: 
+    transition:
         background-color 0.3s ease,
         color 0.3s ease,
         border 0.3s ease;
 }
 
-main > ul > li > button.active{
+main>ul>li>button.active {
     cursor: pointer;
     color: white;
     padding: 5px 5px;
@@ -262,10 +264,10 @@ main > ul > li > button.active{
     padding-top: 40px;
 }
 
-h2{
+h2 {
     text-align: center;
-     color: #003c93; 
-     font-size: 30px;
+    color: #003c93;
+    font-size: 30px;
 }
 
 #botaoMenu {
@@ -315,17 +317,22 @@ h2{
 }
 
 .calendario {
-    width: 95%;            /* Ocupa quase toda a tela em celulares */
-    max-width: 500px;      /* Mas não passa de 500px em telas grandes */
-    height: auto;          /* Deixa a altura se ajustar ao conteúdo */
+    width: 95%;
+    /* Ocupa quase toda a tela em celulares */
+    max-width: 500px;
+    /* Mas não passa de 500px em telas grandes */
+    height: auto;
+    /* Deixa a altura se ajustar ao conteúdo */
     min-height: 550px;
     background-color: #ffffff;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     color: rgb(0, 119, 255);
-    padding: 15px;         /* Reduzi um pouco o padding */
-    margin: 40px auto 60px auto;     /* Centraliza na tela */
+    padding: 15px;
+    /* Reduzi um pouco o padding */
+    margin: 40px auto 60px auto;
+    /* Centraliza na tela */
 }
 
 
@@ -371,13 +378,17 @@ h2{
     font-size: 20px;
 }
 
-.dias div, .diasSemana div {
-    width: calc(100% / 7); /* Divide o espaço por 7 colunas exatas */
-    aspect-ratio: 1 / 1;   /* Mantém o dia sempre como um quadrado perfeito */
+.dias div,
+.diasSemana div {
+    width: calc(100% / 7);
+    /* Divide o espaço por 7 colunas exatas */
+    aspect-ratio: 1 / 1;
+    /* Mantém o dia sempre como um quadrado perfeito */
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: clamp(14px, 4vw, 18px); /* Fonte diminui conforme a tela diminui */
+    font-size: clamp(14px, 4vw, 18px);
+    /* Fonte diminui conforme a tela diminui */
     padding: 5px;
 }
 
@@ -439,39 +450,49 @@ h2{
 
         justify-content: center;
     }
+
+    main>ul {
+        gap: 10px;
+    }
 }
 
 @media (max-width: 400px) {
     .calendario {
         padding: 10px;
     }
-    
+
     #mes {
-        font-size: 18px;   /* Texto do mês menor no celular */
+        font-size: 18px;
+        /* Texto do mês menor no celular */
     }
 
     .botao {
-        font-size: 20px;   /* Ícones de seta menores */
+        font-size: 20px;
+        /* Ícones de seta menores */
         padding: 10px;
     }
 
     .dias {
-        height: auto;      /* Remove a altura fixa para não amassar os dias */
+        height: auto;
+        /* Remove a altura fixa para não amassar os dias */
     }
+
     #painelBusca {
-    right: 170px;
+        right: 170px;
     }
+
     #modalDataTitulo {
         font-size: 1.2rem;
     }
-    
-    .btn-acao, .btn-perigo {
-        padding: 15px; 
+
+    .btn-acao,
+    .btn-perigo {
+        padding: 15px;
         font-size: 16px;
     }
 
     #inputEvento {
-        font-size: 16px; 
+        font-size: 16px;
     }
 }
 
@@ -487,7 +508,7 @@ footer {
 
 .dias div.tem-evento {
     position: relative;
-    
+
 }
 
 .dias div.tem-evento::after {
@@ -507,15 +528,18 @@ footer {
 }
 
 .dias div:hover {
-    background-color: rgba(0, 140, 255, 0.842); /* Um brilho leve ao passar o mouse */
-    transform: scale(1.1); /* Aumenta um pouquinho o número */
+    background-color: rgba(0, 140, 255, 0.842);
+    /* Um brilho leve ao passar o mouse */
+    transform: scale(1.1);
+    /* Aumenta um pouquinho o número */
 }
 
-#busca{
+#busca {
     position: absolute;
     left: 50px;
     border: none;
 }
+
 .busca-calendario {
     position: absolute;
     top: 50px;
@@ -524,7 +548,7 @@ footer {
     background: #fff;
     border-radius: 10px;
     padding: 12px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     display: none;
     gap: 8px;
     flex-direction: column;
@@ -546,26 +570,29 @@ footer {
     cursor: pointer;
     opacity: 1;
 }
+
 /* Estilos do Modal */
 @keyframes animarModal {
     from {
         opacity: 0;
         transform: translateY(-30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
+
 .modal {
-    display: none; 
+    display: none;
     position: fixed;
     z-index: 2000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     align-items: center;
     justify-content: center;
     backdrop-filter: blur(2px);
@@ -578,8 +605,8 @@ footer {
     width: 90%;
     max-width: 400px;
     position: relative;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    animation: animarModal 0.3s ease-out; 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    animation: animarModal 0.3s ease-out;
 }
 
 .close-modal {
@@ -606,7 +633,8 @@ footer {
     margin-top: 20px;
 }
 
-.btn-acao, .btn-perigo {
+.btn-acao,
+.btn-perigo {
     flex: 1;
     padding: 12px;
     border: none;
@@ -616,9 +644,18 @@ footer {
     font-weight: 600;
     transition: filter 0.2s;
 }
-.btn-acao { background-color: #003c93; color: white; }
-.btn-perigo { background-color: #d32f2f; color: white; }
 
-.btn-acao:hover, .btn-perigo:hover {
+.btn-acao {
+    background-color: #003c93;
+    color: white;
+}
+
+.btn-perigo {
+    background-color: #d32f2f;
+    color: white;
+}
+
+.btn-acao:hover,
+.btn-perigo:hover {
     filter: brightness(1.2);
 }

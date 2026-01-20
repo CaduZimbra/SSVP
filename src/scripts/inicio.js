@@ -1,6 +1,22 @@
-let valorEmCaixa = 1500.00;
-const elemento = document.getElementById('valorSaldo');
-elemento.innerText = valorEmCaixa;
+
+function carregarSaldoExterno() {
+
+    const dadosSalvos = localStorage.getItem('minha_conta');
+
+    if (dadosSalvos) {
+
+        const financeiro = JSON.parse(dadosSalvos);
+
+        const display = document.getElementById('valorSaldo');
+
+        display.innerText = financeiro.saldo.toLocaleString('pt-br', { 
+            style: 'currency', 
+            currency: 'BRL' 
+        });
+    } else {
+        console.log("Nenhum dado encontrado no LocalStorage.");
+    }
+}
 
 function toggleMenu() {
   const menu = document.getElementById("sidebar");
@@ -84,3 +100,5 @@ botaoMenuPerfil.addEventListener("click", () => {
 fecharMenu.addEventListener("click", () => {
     menuPerfil.classList.remove("ativo");
 });
+
+carregarSaldoExterno();

@@ -285,13 +285,6 @@ header {
     box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25)
 }
 
-#abaUltima {
-    margin-right: 27px;
-}
-
-#abaProxima {
-    margin-left: 27px;
-}
 
 .conteudoEscala {
     display: flex;
@@ -344,6 +337,15 @@ footer {
     .painelMeio{
         
         justify-content: center;
+    }
+
+    .painelFim{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        align-items: center;
+        justify-items: center;
+
     }
 }
 

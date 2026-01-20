@@ -21,7 +21,7 @@
             <ul>
                 <li>
                     <button id="botaoMenu" onclick="toggleMenu()"><img src="../assets/menu-aberto.png" width="30px"
-                        height="30px"></button>
+                            height="30px"></button>
                 </li>
                 <li>
                     <a href="inicio.html"> <img src="../assets/home.png" alt="Ínicio"></a>
@@ -38,7 +38,7 @@
                 </button>
             </div>
         </div>
-        
+
         <div id="menu-perfil">
             <button id="fechar-menu">
                 <img id="perfil" src="../assets/perfil-fechar.png" alt="Perfil">
@@ -62,67 +62,90 @@
 
     <main>
 
-        <!-- Botões das Abas -->
+      
         <ul class="tabs">
             <li>
-                <button class="tab-btn active" data-tab="financeiro"> 
+                <button class="tab-btn active" data-tab="financeiro">
                     Financeiro
                 </button>
             </li>
             <li>
-                <button class="tab-btn" data-tab="atasereunioes"> 
+                <button class="tab-btn" data-tab="atasereunioes">
                     Atas e Reuniões
                 </button>
             </li>
         </ul>
 
-        <!-- Conteúdo das Abas | Primário ativo-->
+
         <div class="tabs-conteudo">
 
             <div class="aba-conteudo aba-aberta" id="financeiro">
                 <h2>Financeiro</h2>
-                <p>Conteúdo</p>
                 
-            </div> 
-
-    <div class="aba-conteudo" id="atasereunioes">
-    <h2 class="titulo-central">Atas e Reuniões</h2>
-
-    <section id="AtasReunioes" class="container-central">
-    </section>
-
-    <div class="wrapper-botao">
-        <button class="btn-salvar" style="width: 100%; margin-top: 20px;" onclick="abrirModal()">+ Adicionar nova Ata</button>
-    </div>
-
-    <div id="modalCadastro" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="fecharModal()">&times;</span>
-            <h2 style="color: #003c93; margin-bottom: 20px;">Nova Ata/Reunião</h2>
-            
-            <form id="formAtaReuniao">
-                <div class="input-duplo">
-                    <input type="text" id="NumeroAta" placeholder="Ata N° X" required>
-                    <input type="number" id="Num" placeholder="N° Membros" required>
-                </div>
-                
-                <div style="margin-bottom: 10px;">
-                    <label style="font-size: 14px; color: #666; display: block; text-align: left;">Data da Reunião:</label>
-                    <input type="date" id="dataAta" required style="width: 100%;">
+                <div class="box-content" id="saldo">
+                    <h3>Saldo em caixa</h3>
+                    <h3>R$0,00</h3>
                 </div>
 
-                <textarea id="inicioAta" placeholder="Início (Horário/Abertura)"></textarea>
-                <textarea id="coletaAta" placeholder="Coleta na Reunião"></textarea>
-                <textarea id="escalaAta" placeholder="Escala"></textarea>
-                <textarea id="obrasAta" placeholder="Obras Espirituais"></textarea>
-                <textarea id="pendenciasAta" placeholder="Pendências para próxima semana"></textarea>
-                <textarea id="terminoAta" placeholder="Término"></textarea>
-                
-                <button type="submit" class="btn-salvar" style="width: 100%; margin-top: 20px;">Salvar Reunião</button>
-            </form>
-        </div>
-    </div>
-</div>
+                <div class="box-content-total" id="operacao">
+                    <label for="tipo-de-operacao">Escolha qual operação deseja realizar</label>
+                    <select name="tipo-de-operacao" id="tipo-de-operacao">
+                        <option value="entrada">Entrada</option>
+                        <option value="saida">Saida</option>
+                    </select>
+                    <input type="number" id="valor-input" placeholder="0,00">
+                    <input type="text" id="descricao">
+                    <button id="submit-operacao">Enviar</button>
+                </div>
+
+                <div class="box-content" id="extrato">
+                    <p>Dia 12/05/2015</p>
+                    <p>Descrição:</p>
+                    <p>Valor:</p>
+                </div>
+            </div>
+
+            <div class="aba-conteudo" id="atasereunioes">
+                <h2 class="titulo-central">Atas e Reuniões</h2>
+
+                <section id="AtasReunioes" class="container-central">
+                </section>
+
+                <div class="wrapper-botao">
+                    <button class="btn-salvar" style="width: 100%; margin-top: 20px;" onclick="abrirModal()">+ Adicionar
+                        nova Ata</button>
+                </div>
+
+                <div id="modalCadastro" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="fecharModal()">&times;</span>
+                        <h2 style="color: #003c93; margin-bottom: 20px;">Nova Ata/Reunião</h2>
+
+                        <form id="formAtaReuniao">
+                            <div class="input-duplo">
+                                <input type="text" id="NumeroAta" placeholder="Ata N° X" required>
+                                <input type="number" id="Num" placeholder="N° Membros" required>
+                            </div>
+
+                            <div style="margin-bottom: 10px;">
+                                <label style="font-size: 14px; color: #666; display: block; text-align: left;">Data da
+                                    Reunião:</label>
+                                <input type="date" id="dataAta" required style="width: 100%;">
+                            </div>
+
+                            <textarea id="inicioAta" placeholder="Início (Horário/Abertura)"></textarea>
+                            <textarea id="coletaAta" placeholder="Coleta na Reunião"></textarea>
+                            <textarea id="escalaAta" placeholder="Escala"></textarea>
+                            <textarea id="obrasAta" placeholder="Obras Espirituais"></textarea>
+                            <textarea id="pendenciasAta" placeholder="Pendências para próxima semana"></textarea>
+                            <textarea id="terminoAta" placeholder="Término"></textarea>
+
+                            <button type="submit" class="btn-salvar" style="width: 100%; margin-top: 20px;">Salvar
+                                Reunião</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
     </main>
 
 
@@ -131,6 +154,7 @@
     </footer>
 
     <script src="../scripts/financeiro.js"></script>
+    <script src="../scripts/saldo.js"></script>
 
 </body>
 
