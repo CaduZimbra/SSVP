@@ -2,37 +2,32 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
 
 body {
-    font-family: "Poppins", sans-serif;
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    margin: 0px;
-    background-color: #ffffff;
-}
-
-.container {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
 }
 
 header {
+    position: relative;
     width: 100%;
-    min-height: 150px;
+    min-height: 100px;
     display: flex;
     background-color: white;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: #003c93;
-    border-bottom: 5px solid #2196f3;
+    border-bottom: 3px solid #0064B6;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .header-superior {
@@ -40,7 +35,239 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 16px;
+    padding: 0px 32px;
+}
+
+.header-superior>ul {
+    display: inline-flex;
+    list-style-type: none;
+    gap: 10px;
+    align-items: center;
+}
+
+.header-superior img {
+    width: 30px;
+    height: 30px;
+}
+
+#perfil {
+    width: 60px;
+    height: 30px;
+}
+
+.header-superior button {
+    border: 0;
+    background-color: white;
+    padding: 8px;
+}
+
+.header-superior a:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.header-superior button:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+/* ------------Ínicio Menu flutuante------------ */
+#menu-perfil {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 240px;
+    height: 230px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+    padding: 0px 20px 20px 20px;
+
+    /*escondendo*/
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Menu aberto */
+#menu-perfil.ativo {
+    /*mostrando*/
+    display: grid;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Botão fechar */
+#fechar-menu {
+    text-align: right;
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#menu-perfil button:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+/* Lista do menu */
+#menu-perfil ul {
+    list-style: none;
+    padding: 0px;
+}
+
+#menu-perfil li {
+    text-align: right;
+    margin-bottom: 12px;
+    padding-right: 4px;
+}
+
+#menu-perfil a {
+    text-decoration: none;
+    color: #003c93;
+    font-weight: 500;
+}
+
+/* ------------Fim Menu flutuante------------ */
+
+#botaoMenuLateral {
+    width: 60px;
+    height: 60px;
+    border: none;
+    background-color: white;
+}
+
+.me {
+    width: 60px;
+    height: 60px;
+}
+
+.texto-mobile {
+    display: none;
+}
+
+.menu {
+    display: inline-flex;
+    gap: 30px;
+    padding: 20px;
+
+    li {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: #0064B6;
+    }
+
+}
+
+.menu a:hover {
+    text-decoration: underline;
+    filter: brightness(1.2);
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 0px;
+    /* Começa fechado */
+    position: fixed;
+    /* Fixa na tela */
+    z-index: 1000;
+    /* Sobrepõe tudo */
+    top: 0;
+    left: 0;
+    background-color: #0064B6;
+    overflow-x: hidden;
+    transition: 0.5s;
+    /* Animação suave ao abrir */
+    padding-top: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.barElement {
+    color: white;
+    padding: 10px 20px 20px 47px;
+    text-decoration: none;
+}
+
+.barElement:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.closebtn {
+    display: flex;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px 20px 47px;
+    font-size: xx-large;
+
+}
+
+.closebtn:hover {
+    opacity: 0.8;
+}
+
+main {
+    flex: 1;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+
+main>ul {
+    display: inline-flex;
+    gap: 50px;
+    list-style-type: none;
+    padding: 40px 0px 10px 0px;
+}
+
+main>ul>li>button {
+    cursor: pointer;
+    color: #0064B6;
+    width: 180px;
+    padding: 5px 5px;
+    background-color: white;
+    border-radius: 100px;
+    border: 2px solid #0064B6;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border 0.3s ease;
+}
+
+main>ul>li>button.active {
+    cursor: pointer;
+    color: white;
+    padding: 5px 5px;
+    background-color: #0064B6;
+    border-radius: 100px;
+    border: 2px solid #0064B6;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.aba-conteudo {
+    display: none;
+}
+
+.aba-aberta {
+    display: block;
+}
+
+#progresso {
+    padding-top: 40px;
+}
+
+h2 {
+    text-align: center;
+    color: #003c93;
+    font-size: 30px;
 }
 
 #botaoMenu {
@@ -89,62 +316,23 @@ header {
     filter: brightness(1.2);
 }
 
-
-.sidebar {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 0;
-    /* Começa fechado */
-    position: fixed;
-    /* Fixa na tela */
-    z-index: 1000;
-    /* Sobrepõe tudo */
-    top: 0;
-    left: 0;
-    background-color: #2196f3;
-    overflow-x: hidden;
-    transition: 0.5s;
-    /* Animação suave ao abrir */
-    padding-top: 10px;
-}
-
-.barElement{
-    color: white;
-    padding: 20px;
-    text-decoration: none;
-}
-
-.barElement:hover{
-    opacity: 0.8;
-    cursor: pointer;
-}
-
-.closebtn{
-    display: flex;
-    color: white;
-    text-decoration: none;
-    padding: 20px;
-    font-size:xx-large;
-    
-}
-
-.closebtn:hover{
-    opacity: 0.8;
-}
-
 .calendario {
-    width: 95%;            /* Ocupa quase toda a tela em celulares */
-    max-width: 500px;      /* Mas não passa de 500px em telas grandes */
-    height: auto;          /* Deixa a altura se ajustar ao conteúdo */
+    width: 95%;
+    /* Ocupa quase toda a tela em celulares */
+    max-width: 500px;
+    /* Mas não passa de 500px em telas grandes */
+    height: auto;
+    /* Deixa a altura se ajustar ao conteúdo */
     min-height: 550px;
     background-color: #ffffff;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     color: rgb(0, 119, 255);
-    padding: 15px;         /* Reduzi um pouco o padding */
-    margin: 20px auto;     /* Centraliza na tela */
+    padding: 15px;
+    /* Reduzi um pouco o padding */
+    margin: 40px auto 60px auto;
+    /* Centraliza na tela */
 }
 
 
@@ -190,13 +378,17 @@ header {
     font-size: 20px;
 }
 
-.dias div, .diasSemana div {
-    width: calc(100% / 7); /* Divide o espaço por 7 colunas exatas */
-    aspect-ratio: 1 / 1;   /* Mantém o dia sempre como um quadrado perfeito */
+.dias div,
+.diasSemana div {
+    width: calc(100% / 7);
+    /* Divide o espaço por 7 colunas exatas */
+    aspect-ratio: 1 / 1;
+    /* Mantém o dia sempre como um quadrado perfeito */
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: clamp(14px, 4vw, 18px); /* Fonte diminui conforme a tela diminui */
+    font-size: clamp(14px, 4vw, 18px);
+    /* Fonte diminui conforme a tela diminui */
     padding: 5px;
 }
 
@@ -258,39 +450,49 @@ header {
 
         justify-content: center;
     }
+
+    main>ul {
+        gap: 10px;
+    }
 }
 
 @media (max-width: 400px) {
     .calendario {
         padding: 10px;
     }
-    
+
     #mes {
-        font-size: 18px;   /* Texto do mês menor no celular */
+        font-size: 18px;
+        /* Texto do mês menor no celular */
     }
 
     .botao {
-        font-size: 20px;   /* Ícones de seta menores */
+        font-size: 20px;
+        /* Ícones de seta menores */
         padding: 10px;
     }
 
     .dias {
-        height: auto;      /* Remove a altura fixa para não amassar os dias */
+        height: auto;
+        /* Remove a altura fixa para não amassar os dias */
     }
+
     #painelBusca {
-    right: 170px;
+        right: 170px;
     }
+
     #modalDataTitulo {
         font-size: 1.2rem;
     }
-    
-    .btn-acao, .btn-perigo {
-        padding: 15px; 
+
+    .btn-acao,
+    .btn-perigo {
+        padding: 15px;
         font-size: 16px;
     }
 
     #inputEvento {
-        font-size: 16px; 
+        font-size: 16px;
     }
 }
 
@@ -306,7 +508,7 @@ footer {
 
 .dias div.tem-evento {
     position: relative;
-    
+
 }
 
 .dias div.tem-evento::after {
@@ -326,15 +528,18 @@ footer {
 }
 
 .dias div:hover {
-    background-color: rgba(0, 140, 255, 0.842); /* Um brilho leve ao passar o mouse */
-    transform: scale(1.1); /* Aumenta um pouquinho o número */
+    background-color: rgba(0, 140, 255, 0.842);
+    /* Um brilho leve ao passar o mouse */
+    transform: scale(1.1);
+    /* Aumenta um pouquinho o número */
 }
 
-#busca{
+#busca {
     position: absolute;
     left: 50px;
     border: none;
 }
+
 .busca-calendario {
     position: absolute;
     top: 50px;
@@ -343,7 +548,7 @@ footer {
     background: #fff;
     border-radius: 10px;
     padding: 12px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     display: none;
     gap: 8px;
     flex-direction: column;
@@ -365,26 +570,29 @@ footer {
     cursor: pointer;
     opacity: 1;
 }
+
 /* Estilos do Modal */
 @keyframes animarModal {
     from {
         opacity: 0;
         transform: translateY(-30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
+
 .modal {
-    display: none; 
+    display: none;
     position: fixed;
     z-index: 2000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     align-items: center;
     justify-content: center;
     backdrop-filter: blur(2px);
@@ -397,8 +605,8 @@ footer {
     width: 90%;
     max-width: 400px;
     position: relative;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    animation: animarModal 0.3s ease-out; 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    animation: animarModal 0.3s ease-out;
 }
 
 .close-modal {
@@ -425,7 +633,8 @@ footer {
     margin-top: 20px;
 }
 
-.btn-acao, .btn-perigo {
+.btn-acao,
+.btn-perigo {
     flex: 1;
     padding: 12px;
     border: none;
@@ -435,9 +644,18 @@ footer {
     font-weight: 600;
     transition: filter 0.2s;
 }
-.btn-acao { background-color: #003c93; color: white; }
-.btn-perigo { background-color: #d32f2f; color: white; }
 
-.btn-acao:hover, .btn-perigo:hover {
+.btn-acao {
+    background-color: #003c93;
+    color: white;
+}
+
+.btn-perigo {
+    background-color: #d32f2f;
+    color: white;
+}
+
+.btn-acao:hover,
+.btn-perigo:hover {
     filter: brightness(1.2);
 }
